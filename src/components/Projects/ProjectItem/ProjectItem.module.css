@@ -1,12 +1,13 @@
 .project {
     min-width: 238px;
-    max-width: 250px;
+    /*max-width: 250px;*/
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin-bottom: 20px;
+
 }
 
 .imgContainer {
@@ -30,12 +31,15 @@
     align-items: center;
     border-radius: 4px;
 }
+
 .text {
     padding: 10px;
 }
+
 .title {
     background-color: rgba(138, 184, 142, 0.85);
 }
+
 .description {
     background-color: rgba(93, 149, 241, 0.85);
 }
@@ -43,5 +47,13 @@
 @media screen and (max-width: 768px) {
     .project:last-child {
         margin: 0;
+    }
+}
+@media screen and (max-width: 360px) {
+    .project:last-child {
+        margin: 0;
+    }
+    .project{
+        width: 100%;
     }
 }
