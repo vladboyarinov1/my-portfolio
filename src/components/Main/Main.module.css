@@ -1,0 +1,30 @@
+.main {
+    background-color: rgba(165, 88, 88, 0.85);
+    /*height: 100vh;*/
+    padding: 80px 0;
+}
+
+.welcomeText {
+    width: 300px;
+    background-color: rgba(93, 149, 241, 0.85);
+}
+
+.photo {
+    width: 300px;
+    height: 360px;
+    background-color: rgba(93, 149, 241, 0.85);
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        padding-top: 10px;
+    }
+
+    .welcomeText {
+        margin-bottom: 20px;
+    }
+
+    .mainContainer {
+        justify-content: center !important;
+    }
+}
