@@ -1,0 +1,33 @@
+.skillsBlock {
+    min-height: 100vh;
+    background-color: rgba(138, 184, 142, 0.85);
+    padding: 40px 0;
+}
+
+.skillsContainer {
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.title {
+    background-color: rgba(93, 149, 241, 0.85);
+    margin-bottom: 20px;
+}
+.skills {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.skillsItem {
+
+}
+
+@media screen and (max-width: 768px) {
+    .skills {
+        /*flex-direction: row;*/
+        flex-direction: column;
+        align-items: center !important;
+    }
+}
