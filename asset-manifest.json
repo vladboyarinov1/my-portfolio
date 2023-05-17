@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/vladboyarinov1/my-portfolio/static/css/main.44eb21bb.css",
-    "main.js": "/vladboyarinov1/my-portfolio/static/js/main.42789e3f.js",
-    "static/js/787.128fc6e9.chunk.js": "/vladboyarinov1/my-portfolio/static/js/787.128fc6e9.chunk.js",
-    "index.html": "/vladboyarinov1/my-portfolio/index.html",
-    "main.44eb21bb.css.map": "/vladboyarinov1/my-portfolio/static/css/main.44eb21bb.css.map",
-    "main.42789e3f.js.map": "/vladboyarinov1/my-portfolio/static/js/main.42789e3f.js.map",
-    "787.128fc6e9.chunk.js.map": "/vladboyarinov1/my-portfolio/static/js/787.128fc6e9.chunk.js.map"
+    "main.css": "/my-portfolio/static/css/main.44eb21bb.css",
+    "main.js": "/my-portfolio/static/js/main.c40c86db.js",
+    "static/js/787.128fc6e9.chunk.js": "/my-portfolio/static/js/787.128fc6e9.chunk.js",
+    "index.html": "/my-portfolio/index.html",
+    "main.44eb21bb.css.map": "/my-portfolio/static/css/main.44eb21bb.css.map",
+    "main.c40c86db.js.map": "/my-portfolio/static/js/main.c40c86db.js.map",
+    "787.128fc6e9.chunk.js.map": "/my-portfolio/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.44eb21bb.css",
-    "static/js/main.42789e3f.js"
+    "static/js/main.c40c86db.js"
   ]
 }
