@@ -1,0 +1,21 @@
+.header {
+    height: 80px;
+    background-color: rgba(93, 149, 241, 0.85);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav {
+    border: 1px solid yellow;
+    min-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+    .header {
+        justify-content: center;
+    }
+}
+
