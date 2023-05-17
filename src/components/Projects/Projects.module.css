@@ -1,0 +1,30 @@
+.projectBlock {
+    background-color: rgba(155, 25, 103, 0.85);
+    padding: 40px 0;
+    min-width: 300px;
+}
+
+.projectContainer {
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.title {
+    background-color: rgba(93, 149, 241, 0.85);
+    margin-bottom: 20px;
+}
+
+.projects {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+@media screen and (max-width: 768px) {
+    .projects {
+        flex-direction: column;
+        align-items: center !important;
+    }
+}
