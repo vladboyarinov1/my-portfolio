@@ -4,7 +4,7 @@ import styleContainer from '../../common/styles/Container.module.css'
 
 export const Main = () => {
     return (
-        <div className={s.main}>
+        <main className={s.main}>
             <div className={`${styleContainer.container} ${s.mainContainer}`}>
                 <div className={s.welcomeText}>
                     <span>Welcome text</span>
@@ -13,6 +13,6 @@ export const Main = () => {
                 </div>
                 <div className={s.photo}></div>
             </div>
-        </div>
+        </main>
     );
 };

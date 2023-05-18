@@ -2,6 +2,7 @@
     background-color: rgba(165, 88, 88, 0.85);
     /*height: 100vh;*/
     padding: 80px 0;
+    min-width: 300px;
 }
 
 .welcomeText {
