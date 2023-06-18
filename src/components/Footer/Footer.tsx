@@ -1,10 +1,10 @@
 import React from 'react';
 import styleContainer from '../../common/styles/Container.module.css'
 import s from './Footer.module.css'
-import inst from '../../icons/instagram.svg'
-import facebook from '../../icons/facebook.svg'
-import telegram from '../../icons/telegram.svg'
-import linkedIn from '../../icons/linkedIn.svg'
+import inst from '../../img/icons/instagram.svg'
+import facebook from '../../img/icons/facebook.svg'
+import telegram from '../../img/icons/telegram.svg'
+import linkedIn from '../../img/icons/linkedIn.svg'
 
 
 export const Footer = () => {

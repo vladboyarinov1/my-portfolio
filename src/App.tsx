@@ -7,7 +7,6 @@ import {Projects} from './components/Projects/Projects';
 import {Contacts} from './components/Contacts/Contacts';
 import {Footer} from './components/Footer/Footer';
 
-
 function App() {
     return (
         <div>
