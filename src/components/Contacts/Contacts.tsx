@@ -1,10 +1,11 @@
 import React from 'react';
 import s from './Contacts.module.css'
 import styleContainer from '../../common/styles/Container.module.css'
+import {Element} from 'react-scroll';
 
 export const Contacts = () => {
     return (
-        <div className={s.contactsBlock}>
+        <Element name={'contacts'}  className={s.contactsBlock} id={'contacts'}>
             <div className={`${styleContainer.container} ${s.contactsContainer}`}>
                 <h3 className={s.title}>Contacts</h3>
                 <form className={s.formContainer}>
@@ -20,6 +21,6 @@ export const Contacts = () => {
                     <button className={s.button} type="submit">Отправить</button>
                 </form>
             </div>
-        </div>
+        </Element>
     );
 };
