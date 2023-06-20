@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.3c97808b.css",
-    "main.js": "/my-portfolio/static/js/main.840dad63.js",
+    "main.css": "/my-portfolio/static/css/main.b6088630.css",
+    "main.js": "/my-portfolio/static/js/main.657913b3.js",
     "static/js/651.eb570ad4.chunk.js": "/my-portfolio/static/js/651.eb570ad4.chunk.js",
     "static/media/myfont.ttf": "/my-portfolio/static/media/myfont.4a3eef3e0a61b7eb3eda.ttf",
     "static/media/instagram.svg": "/my-portfolio/static/media/instagram.8ff7ce92ad753b591ed4c1d03e84c026.svg",
@@ -11,12 +11,12 @@
     "static/media/burger.svg": "/my-portfolio/static/media/burger.700e416f7bfe3697f96b36c778d25355.svg",
     "static/media/linkedIn.svg": "/my-portfolio/static/media/linkedIn.ada11cda991129bc91b79d2c7cee1066.svg",
     "static/media/facebook.svg": "/my-portfolio/static/media/facebook.22d5e33c85b7691bd69150ce20e2d12b.svg",
-    "main.3c97808b.css.map": "/my-portfolio/static/css/main.3c97808b.css.map",
-    "main.840dad63.js.map": "/my-portfolio/static/js/main.840dad63.js.map",
+    "main.b6088630.css.map": "/my-portfolio/static/css/main.b6088630.css.map",
+    "main.657913b3.js.map": "/my-portfolio/static/js/main.657913b3.js.map",
     "651.eb570ad4.chunk.js.map": "/my-portfolio/static/js/651.eb570ad4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c97808b.css",
-    "static/js/main.840dad63.js"
+    "static/css/main.b6088630.css",
+    "static/js/main.657913b3.js"
   ]
 }
