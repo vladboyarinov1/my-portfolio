@@ -1,0 +1,39 @@
+.wrapper {
+  margin-bottom: 15px;
+}
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.progress {
+  background-color: #eee;
+  height: 4px;
+  border-radius: 4px;
+  transition: width 0.3s ease-in-out;
+  width: 85%;
+  margin-right: 6px;
+
+  &::-webkit-progress-bar {
+    background-color: #e9ecef;
+    border-radius: 10px;
+  }
+
+  &::-webkit-progress-value {
+    background-color: #96bb7c;
+    border-radius: 10px;
+  }
+
+}
+
+
+.progressBlock {
+  display: flex;
+  align-items: center;
+  & span {
+    font-size: 16px;
+    color: #939393;
+  }
+}
+
+
