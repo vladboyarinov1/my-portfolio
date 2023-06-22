@@ -1,10 +1,37 @@
 .container {
+    /*height: 100%;*/
+    /*width: 86%;*/
+    /*margin: 0 auto;*/
+    /*display: flex;*/
+    align-items: center;
+    /*justify-content: space-between;*/
+    /*border: 1px solid yellow;*/
+    /*flex-wrap: wrap;*/
+
     height: 100%;
-    width: 80%;
+    width: 86%;
     margin: 0 auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    border: 1px solid yellow;
+    border: 1px solid #4087f5;
     flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 96%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .container {
+        width: 80%;
+        /*justify-content: center;*/
+    }
+}
+@media screen and (max-width: 640px) {
+    .container {
+        width: 90%;
+        /*justify-content: center;*/
+    }
 }

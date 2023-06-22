@@ -1,7 +1,13 @@
 * {
     box-sizing: border-box;
 }
+.headerContainer {
+    /*border: 1px solid red;*/
 
+    /*margin: 0 auto;*/
+    /*box-sizing: border-box;*/
+    /*overflow: hidden;*/
+}
 .header {
     position: absolute;
     height: 0px;
@@ -44,19 +50,22 @@ nav {
 }
 
 .backgroundPhoto {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
     background-image: url("https://pbs.twimg.com/media/DcT2RhEU8AIFvXu?format=jpg&name=4096x4096");
     min-width: 300px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% -25px;
+    border: 1px solid red;
 }
 
 .backgroundPhoto:before {
+
     position: absolute;
     content: "";
     left: 0;
-    bottom: 0;
+    bottom: -1px;
     right: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.4);

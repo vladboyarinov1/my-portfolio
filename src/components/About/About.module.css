@@ -1,0 +1,109 @@
+.main {
+    padding: 100px 0;
+    /*height: 100vh;*/
+    display: flex;
+    height: 100%;
+    min-width: 300px;
+
+}
+
+.imgBlock {
+    padding-right: 10px;
+}
+
+.imgBlock:before {
+
+}
+
+.imgBlock img {
+    width: 600px;
+    height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    object-position: 50% 50%;
+    vertical-align: bottom
+}
+
+.bioBlock {
+    width: 412px;
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid red;*/
+    padding-top: 20px;
+}
+
+.textBlock {
+}
+
+.textBlock h2 {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.textBlock p {
+    line-height: 1.6;
+    background: #ffffff;
+    overflow-x: hidden;
+    font-size: 16px;
+    color: #939393;
+}
+
+.bioText {
+    margin-bottom: 3rem !important;
+    margin-top: 1rem;
+}
+
+.buttonsBlock {
+    margin-top: 60px;
+}
+
+.hire,
+.download {
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .05rem;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.hire {
+    background: #96bb7c;
+    margin-right: 5px;
+}
+
+.download {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+@media screen and (max-width: 1200px) {
+    .imgBlock img {
+        width: 497px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .main {
+        padding: 40px 0;
+    }
+    .imgBlock img {
+        display: none;
+    }
+    .bioBlock {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+    .bioBlock {
+        padding-top: 0;
+    }
+
+}
+
+
