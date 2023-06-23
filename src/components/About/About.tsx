@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './About.module.css'
 import {Element} from 'react-scroll';
-import {LinearProgress} from '@mui/material';
 import styleContainer from '../../common/styles/Container.module.css'
 import {ProgressItem} from './ProgressItem/ProgressItem';
 
@@ -15,21 +14,9 @@ const progress = [
 ]
 
 export const About = () => {
-    const downloadTxtFile = () => {
-        // text content
-        const texts = ['line 1', 'line 2', 'line 3']
-
-        // file object
-        const file = new Blob(texts, {type: 'text/plain'});
-
-        // anchor link
-        const element = document.createElement('a');
-        element.href = URL.createObjectURL(file);
-        element.download = '100ideas-' + Date.now() + '.txt';
-
-        // simulate link click
-        document.body.appendChild(element); // Required for this to work in FireFox
-        element.click();
+    const downloadCV = () => {
+        const url = 'https://drive.google.com/uc?export=download&id=1H9UlTnDqcKopBQujJe7r0UpocnO94-hG';
+        window.open(url, '_blank');
     }
 
     return (
@@ -62,8 +49,9 @@ export const About = () => {
                         </div>
                         <div className={s.buttonsBlock}>
                             <button className={s.hire}>HIRE ME</button>
-                            <a href="/res.pdf" download className={s.download}>DOWNLOAD
-                                CV</a>
+                            <button className={s.download} onClick={downloadCV}>DOWNLOAD
+                                CV
+                            </button>
                         </div>
                     </div>
                 </div>
