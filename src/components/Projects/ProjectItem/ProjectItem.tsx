@@ -92,6 +92,7 @@ const ImgContainer = styled.a<{ imgUrl: string; isHovered: boolean }>`
     font-weight: bold;
     opacity: 0;
     transition: all 0.3s;
+    color: #96bb7c;
   }
 
   /* Позволяет кликать на элемент a, даже если у него есть псевдоэлементы */

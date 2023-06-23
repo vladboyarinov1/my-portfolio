@@ -28,23 +28,20 @@ export const About = () => {
                     </div>
                     <div className={s.bioBlock}>
                         <div className={s.textBlock}>
-                            <h2>My bio</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
-                                the Semantics, a large language ocean.</p>
-                            <p className={s.bioText}>A small river named Duden flows by their place and supplies it with
-                                the necessary
-                                regelialia. It is a paradisematic country, in which roasted parts of sentences fly into
-                                your mouth.</p>
+                            <h2>My Bio</h2>
+                            <p>Hi! My name is Vlad and I am studying web development courses and pursuing higher
+                                education in information technology. I am interested in developing user interfaces and
+                                web applications, and I have gained knowledge in HTML, CSS, JavaScript and React in my
+                                courses and at the university. </p>
+                            <p className={s.bioText}>I have participated in several projects, including creating a
+                                website for selling goods, as well as a portfolio site to demonstrate my skills. I also
+                                devote time to self-study and learning new web development technologies. I am ready to
+                                implement new projects and improve my skills to become a qualified web development
+                                specialist.</p>
                         </div>
                         <div className={s.skillLevelBlock}>
-                            {/*<ProgressItem id={1} value={60} title={'React'}/>*/}
                             {
-                                progress.map(i => {
-                                    return (
-                                        <ProgressItem key={i.id} id={i.id} title={i.title} value={i.value}/>
-                                    )
-                                })
+                                progress.map(i => <ProgressItem key={i.id} id={i.id} title={i.title} value={i.value}/>)
                             }
                         </div>
                         <div className={s.buttonsBlock}>
@@ -57,6 +54,5 @@ export const About = () => {
                 </div>
             </main>
         </Element>
-
     );
 };

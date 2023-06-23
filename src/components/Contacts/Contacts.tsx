@@ -44,15 +44,15 @@ export const Contacts = () => {
                                 className={s.address}></span><span className={s.addressText}>Belarus, Minsk</span></a>
                             </li>
 
-                            <li><a href=""><span
+                            <li><a href="tel:+375298336185"><span
                                 className={s.phone}></span><span>+375298336185</span></a>
                             </li>
 
-                            <li><a href=""><span
+                            <li><a href="mailto:boyarinov.2002@bk.ru"><span
                                 className={s.email}></span><span>boyarinov.2002@bk.ru</span></a>
                             </li>
 
-                            <li><a href=""><span
+                            <li><a href="https://t.me/boyarinov_1"><span
                                 className={s.telegram}></span><span>https://github.com/vladboyarinov1</span></a>
                             </li>
                         </ul>
@@ -63,13 +63,3 @@ export const Contacts = () => {
     );
 };
 
-//<div className="col-lg-4 ml-auto aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-// <h3 className="h5 mb-4">Contact Info</h3>
-// <address className="text-black d-flex"><span className="mt-1 icon-room mr-2"></span><span>43 Raymouth Rd. Baltemoer, London 3910</span></address>
-// <ul className="list-unstyled ul-links mb-4">
-// <li className="mb-3"><a href="tel://11234567890" className="d-flex"><span className="mt-1 icon-phone mr-2"></span><span>+1(123)-456-7890</span></a></li>
-// <li className="mb-3"><a href="tel://11234567890" className="d-flex"><span className="mt-1 icon-phone mr-2"></span><span>+1(123)-456-7890</span></a></li>
-// <li className="mb-3"><a href="mailto:info@mydomain.com" className="d-flex"><span className="mt-1 icon-envelope mr-2"></span><span>info@mydomain.com</span></a></li>
-// <li className="mb-3"><a href="https://Colorlib/" target="_blank" className="d-flex"><span className="mt-1 icon-globe mr-2"></span><span>https://Colorlib/</span></a></li>
-// </ul>
-// </div>
