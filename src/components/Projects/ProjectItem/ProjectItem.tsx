@@ -1,16 +1,99 @@
-import React from 'react';
-import s from './ProjectItem.module.css'
+import React, { FC, useState } from 'react';
+import s from './ProjectItem.module.css';
+import styled from 'styled-components';
 
-export const ProjectItem = () => {
+type PropsType = {
+    id: number;
+    text: string;
+    title: string;
+    description: string;
+    projectImg: string;
+    link: string;
+};
+
+export const ProjectItem: FC<PropsType> = ({
+                                               id,
+                                               text,
+                                               title,
+                                               description,
+                                               projectImg,
+                                               link,
+                                           }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
     return (
         <div className={s.project}>
-            <div className={s.imgContainer}>
-                <a href="" className={s.button}>View</a>
-            </div>
+            <ImgContainer href={link} target='_blank'
+                imgUrl={projectImg}
+                className={s.imgContainer}
+                isHovered={isHovered}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+                {/*<a href={link} className={s.button} target="_blank" rel="noopener noreferrer">*/}
+                {/*    View*/}
+                {/*</a>*/}
+            </ImgContainer>
             <div className={s.text}>
-                <h2 className={s.title}>Project Tile</h2>
-                <span className={s.description}>Project description</span>
+                <h2 className={s.title}>{title}</h2>
+                <span className={s.description}>{description}</span>
             </div>
         </div>
     );
 };
+
+const ImgContainer = styled.a<{ imgUrl: string; isHovered: boolean }>`
+  display: block;
+  width: 100%;
+  height: 300px;
+  background-color: rgba(93, 149, 241, 0.85);
+  background-image: url(${(props) => props.imgUrl});
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: ${(props) => (props.isHovered ? 1 : 0)};
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    background-size: 110% 110%;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    content: 'Click to View';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  /* Позволяет кликать на элемент a, даже если у него есть псевдоэлементы */
+  pointer-events: auto;
+`;
