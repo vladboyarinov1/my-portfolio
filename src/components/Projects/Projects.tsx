@@ -12,7 +12,7 @@ const projectsItems = [
         projectImg: todolistImg, link: 'https://github.com/vladboyarinov1/todolist'
     },
     {id: 2, title: 'Social Network', description: 'React,Redux,Storybook', projectImg: socialImg, link: ''},
-    {id: 3, title: 'Clone Instagram', description: 'React,Redux,Storybook', projectImg: '', link: ''},
+    {id: 3, title: 'Clone Instagram', description: 'React,Redux,Storybook', projectImg: todolistImg, link: ''},
 
 ]
 

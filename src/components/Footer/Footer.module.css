@@ -1,6 +1,10 @@
 .footerBlock {
-    background-color: rgba(93, 149, 241, 0.85);
     min-width: 300px;
+
+    background: #efefef;
+    font-size: 14px;
+    color: #888;
+    padding: 70px 0;
 }
 .footerContainer {
     display: flex;
