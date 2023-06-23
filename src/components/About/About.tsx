@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './About.module.css'
-import {Element} from 'react-scroll';
+import {Element, Link} from 'react-scroll';
 import styleContainer from '../../common/styles/Container.module.css'
 import {ProgressItem} from './ProgressItem/ProgressItem';
 
@@ -45,7 +45,7 @@ export const About = () => {
                             }
                         </div>
                         <div className={s.buttonsBlock}>
-                            <button className={s.hire}>HIRE ME</button>
+                            <Link spy={true} smooth={true} offset={-70} duration={500} to='contacts' className={s.hire}>HIRE ME</Link>
                             <button className={s.download} onClick={downloadCV}>DOWNLOAD
                                 CV
                             </button>
