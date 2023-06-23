@@ -7,7 +7,16 @@ import {useWindowSize} from '../../hooks/useWindowSize';
 import burger from '../../img/icons/burger.svg'
 import burgerWhite from '../../img/icons/burgerWhite.svg'
 import {Sidebar} from './Sidebar/Sidebar';
+import {LinkItem} from './LinkWrapper/LinkWrapper';
 
+
+const linked = [
+    {id: 1, title: 'Home', to: 'home'},
+    {id: 2, title: 'About', to: 'about'},
+    {id: 4, title: 'Skills', to: 'skills'},
+    {id: 5, title: 'Projects', to: 'projects'},
+    {id: 5, title: 'Contacts', to: 'contacts'},
+]
 
 export const Header = () => {
     const scrollPosition = useScrollPosition();
@@ -48,16 +57,20 @@ export const Header = () => {
                 {
                     !widthForBurger ? <header className={fixedHeader ? s.fixed : s.header}>
                         <nav className={fixedHeader ? s.fixedHeader : s.notFixedHeader}>
-                            <LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}
-                                         to="/">Home</LinkWrapper>
-                            <LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}
-                                         to="about">About</LinkWrapper>
-                            <LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}
-                                         to="skills">Skills</LinkWrapper>
-                            <LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}
-                                         to="projects">Projects</LinkWrapper>
-                            <LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}
-                                         to="contacts">Contacts</LinkWrapper>
+                            {/*<LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}*/}
+                            {/*             to="/">Home</LinkWrapper>*/}
+                            {/*<LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}*/}
+                            {/*             to="about">About</LinkWrapper>*/}
+                            {/*<LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}*/}
+                            {/*             to="skills">Skills</LinkWrapper>*/}
+                            {/*<LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}*/}
+                            {/*             to="projects">Projects</LinkWrapper>*/}
+                            {/*<LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}*/}
+                            {/*             to="contacts">Contacts</LinkWrapper>*/}
+                            {
+                                linked.map(l =>  <LinkItem  to={l.to} fixedHeader={fixedHeader} title={l.title}/>)
+                            }
+                            {/*<LinkItem fixedHeader={fixedHeader} title={''}/>*/}
                         </nav>
                     </header> : <header className={s.burgerHeader}>
                         <div id={'hw5-header'} className={fixedHeader ? s.fixedHeaderBlock : s.headerBlock}>
@@ -85,23 +98,3 @@ export const Header = () => {
         </Element>
     );
 };
-
-
-const LinkWrapper = styled(Link)<{ fixedHeader: boolean }>`
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none !important;
-
-  color: ${props => props.fixedHeader ? 'black' : 'rgba(255, 255, 255, 0.5)'};
-  position: relative;
-
-  &.active {
-    text-decoration: underline;
-    color: #96bb7c;
-  }
-
-  &:hover {
-    color: ${props => props.fixedHeader ? '' : '#fff'};
-  }
-`;
