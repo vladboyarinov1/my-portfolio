@@ -19,7 +19,7 @@ export const Footer = () => {
                     <a href="https://www.linkedin.com/in/vlad-boiarinov-b09317277/" target="_blank">
                         <img src={linkedIn} alt="LinkedIn"/>
                     </a>
-                    <a href="https://www.instagram.com/your_profile" target="_blank">
+                    <a href="https://www.instagram.com/vlad.boyara/" target="_blank">
                         <img src={inst} alt="Instagram"/>
                     </a>
                     <a href="https://vk.com/vlad_boyarinov" target="_blank">
