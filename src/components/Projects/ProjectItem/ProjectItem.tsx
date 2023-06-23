@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 type PropsType = {
     id: number;
-    text: string;
     title: string;
     description: string;
     projectImg: string;
@@ -13,7 +12,6 @@ type PropsType = {
 
 export const ProjectItem: FC<PropsType> = ({
                                                id,
-                                               text,
                                                title,
                                                description,
                                                projectImg,
@@ -60,10 +58,12 @@ const ImgContainer = styled.a<{ imgUrl: string; isHovered: boolean }>`
   background-position: center;
   position: relative;
   cursor: pointer;
+  border-radius: 4px 4px 0 0;
 
   &::before {
     content: '';
     position: absolute;
+    border-radius: 3px 3px 0 0;
     top: 0;
     left: 0;
     width: 100%;

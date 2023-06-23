@@ -5,6 +5,7 @@ import {LinearProgress} from '@mui/material';
 import styleContainer from '../../common/styles/Container.module.css'
 import {ProgressItem} from './ProgressItem/ProgressItem';
 
+
 const progress = [
     {id: 1, title: 'HTML', value: 90},
     {id: 2, title: 'CSS', value: 80},
@@ -12,7 +13,25 @@ const progress = [
     {id: 4, title: 'React', value: 75},
     {id: 5, title: 'Storybook', value: 40},
 ]
+
 export const About = () => {
+    const downloadTxtFile = () => {
+        // text content
+        const texts = ['line 1', 'line 2', 'line 3']
+
+        // file object
+        const file = new Blob(texts, {type: 'text/plain'});
+
+        // anchor link
+        const element = document.createElement('a');
+        element.href = URL.createObjectURL(file);
+        element.download = '100ideas-' + Date.now() + '.txt';
+
+        // simulate link click
+        document.body.appendChild(element); // Required for this to work in FireFox
+        element.click();
+    }
+
     return (
         <Element name={'about'} id="about">
             <main className={s.main}>
@@ -40,12 +59,11 @@ export const About = () => {
                                     )
                                 })
                             }
-
-
                         </div>
                         <div className={s.buttonsBlock}>
                             <button className={s.hire}>HIRE ME</button>
-                            <button className={s.download}>DOWNLOAD CV</button>
+                            <a href="../../res.pdf" download  className={s.download}>DOWNLOAD
+                                CV</a>
                         </div>
                     </div>
                 </div>

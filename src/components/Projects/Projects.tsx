@@ -8,15 +8,12 @@ import socialImg from '../../img/network.jpg'
 
 const projectsItems = [
     {
-        id: 1,
-        text: 'Stack',
-        title: 'Todo-list',
-        description: 'React,Redux,Storybook',
-        projectImg: todolistImg,
-        link: 'https://github.com/vladboyarinov1/todolist'
+        id: 1, title: 'Todo-list', description: 'React,Redux,Storybook',
+        projectImg: todolistImg, link: 'https://github.com/vladboyarinov1/todolist'
     },
-    {id: 2, text: '', title: 'Social Network', description: '', projectImg: socialImg, link: ''},
-    {id: 3, text: '', title: 'Clone Instagram', description: '', projectImg: '', link: ''},
+    {id: 2, title: 'Social Network', description: 'React,Redux,Storybook', projectImg: socialImg, link: ''},
+    {id: 3, title: 'Clone Instagram', description: 'React,Redux,Storybook', projectImg: '', link: ''},
+
 ]
 
 export const Projects = () => {
@@ -28,7 +25,7 @@ export const Projects = () => {
                     {
                         projectsItems.map(i => <ProjectItem key={i.id} link={i.link} id={i.id} title={i.title}
                                                             description={i.description}
-                                                            text={i.text} projectImg={i.projectImg}/>)
+                                                            projectImg={i.projectImg}/>)
                     }
                 </div>
             </div>
