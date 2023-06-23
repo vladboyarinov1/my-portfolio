@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.04dc4100.css",
+    "main.css": "/my-portfolio/static/css/main.a9464920.css",
     "main.js": "/my-portfolio/static/js/main.de479c43.js",
     "static/js/651.eb570ad4.chunk.js": "/my-portfolio/static/js/651.eb570ad4.chunk.js",
     "static/media/myfont.ttf": "/my-portfolio/static/media/myfont.4a3eef3e0a61b7eb3eda.ttf",
@@ -16,12 +16,12 @@
     "static/media/telegramIcon.svg": "/my-portfolio/static/media/telegramIcon.79fa9b1d32594771853b.svg",
     "static/media/facebook.svg": "/my-portfolio/static/media/facebook.22d5e33c85b7691bd69150ce20e2d12b.svg",
     "static/media/email.svg": "/my-portfolio/static/media/email.993307fe70f2cc896dec.svg",
-    "main.04dc4100.css.map": "/my-portfolio/static/css/main.04dc4100.css.map",
+    "main.a9464920.css.map": "/my-portfolio/static/css/main.a9464920.css.map",
     "main.de479c43.js.map": "/my-portfolio/static/js/main.de479c43.js.map",
     "651.eb570ad4.chunk.js.map": "/my-portfolio/static/js/651.eb570ad4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.04dc4100.css",
+    "static/css/main.a9464920.css",
     "static/js/main.de479c43.js"
   ]
 }
