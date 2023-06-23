@@ -62,7 +62,7 @@ export const About = () => {
                         </div>
                         <div className={s.buttonsBlock}>
                             <button className={s.hire}>HIRE ME</button>
-                            <a href="../../res.pdf" download  className={s.download}>DOWNLOAD
+                            <a href="/res.pdf" download className={s.download}>DOWNLOAD
                                 CV</a>
                         </div>
                     </div>
