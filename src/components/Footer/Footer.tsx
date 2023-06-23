@@ -5,6 +5,7 @@ import inst from '../../img/icons/instagram.svg'
 import telegram from '../../img/icons/telegram.svg'
 import linkedIn from '../../img/icons/linkedIn.svg'
 import vk from '../../img/icons/vk.svg'
+import git from '../../img/icons/git.svg'
 
 
 export const Footer = () => {
@@ -14,10 +15,13 @@ export const Footer = () => {
                 <p>Vladislav Boiarinov</p>
                 <div className={s.socialIcons}>
                     <a href="https://t.me/boyarinov_1" target="_blank">
-                        <img src={telegram} alt="Twitter"/>
+                        <img src={telegram} alt="telegram"/>
                     </a>
                     <a href="https://www.linkedin.com/in/vlad-boiarinov-b09317277/" target="_blank">
                         <img src={linkedIn} alt="LinkedIn"/>
+                    </a>
+                    <a href="https://github.com/vladboyarinov1" target="_blank">
+                        <img src={git} alt="git"/>
                     </a>
                     <a href="https://www.instagram.com/vlad.boyara/" target="_blank">
                         <img src={inst} alt="Instagram"/>

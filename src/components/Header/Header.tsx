@@ -13,14 +13,13 @@ import {LinkItem} from './LinkWrapper/LinkWrapper';
 const linked = [
     {id: 1, title: 'Home', to: 'home'},
     {id: 2, title: 'About', to: 'about'},
-    {id: 4, title: 'Skills', to: 'skills'},
-    {id: 5, title: 'Projects', to: 'projects'},
-    {id: 5, title: 'Contacts', to: 'contacts'},
+    {id: 3, title: 'Projects', to: 'projects'},
+    {id: 4, title: 'Contacts', to: 'contacts'},
 ]
 
 export const Header = () => {
     const scrollPosition = useScrollPosition();
-    const {width, height} = useWindowSize()
+    const {width} = useWindowSize()
 
     const [open, setOpen] = useState(false)
     const handleClose = () => setOpen(false)
@@ -57,20 +56,10 @@ export const Header = () => {
                 {
                     !widthForBurger ? <header className={fixedHeader ? s.fixed : s.header}>
                         <nav className={fixedHeader ? s.fixedHeader : s.notFixedHeader}>
-                            {/*<LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}*/}
-                            {/*             to="/">Home</LinkWrapper>*/}
-                            {/*<LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}*/}
-                            {/*             to="about">About</LinkWrapper>*/}
-                            {/*<LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}*/}
-                            {/*             to="skills">Skills</LinkWrapper>*/}
-                            {/*<LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}*/}
-                            {/*             to="projects">Projects</LinkWrapper>*/}
-                            {/*<LinkWrapper fixedHeader={fixedHeader} spy={true} smooth={true} offset={-70} duration={500}*/}
-                            {/*             to="contacts">Contacts</LinkWrapper>*/}
                             {
-                                linked.map(l =>  <LinkItem  to={l.to} fixedHeader={fixedHeader} title={l.title}/>)
+                                linked.map(l => <LinkItem key={l.id} to={l.to} fixedHeader={fixedHeader}
+                                                          title={l.title}/>)
                             }
-                            {/*<LinkItem fixedHeader={fixedHeader} title={''}/>*/}
                         </nav>
                     </header> : <header className={s.burgerHeader}>
                         <div id={'hw5-header'} className={fixedHeader ? s.fixedHeaderBlock : s.headerBlock}>
@@ -91,7 +80,7 @@ export const Header = () => {
                         <h1>I'm Vladislav Boiarinov<br/>
                             A Front-end Developer
                         </h1>
-                        <p>A new work from <a href="#">Colorlib</a></p>
+                        <p>Link to my <a href="https://github.com/vladboyarinov1" target="_blank">GitHub</a> account</p>
                     </div>
                 </div>
             </div>
