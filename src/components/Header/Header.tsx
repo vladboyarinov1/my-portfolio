@@ -5,6 +5,7 @@ import {Element, Link} from 'react-scroll';
 import useScrollPosition from '../../hooks/useScrollPosition';
 import {useWindowSize} from '../../hooks/useWindowSize';
 import burger from '../../img/icons/burger.svg'
+import burgerWhite from '../../img/icons/burgerWhite.svg'
 import {Sidebar} from './Sidebar/Sidebar';
 
 
@@ -19,9 +20,6 @@ export const Header = () => {
         open && (document.body.style.overflow = 'hidden')
         !open && (document.body.style.overflow = 'unset')
     }, [open]) // отключает прокрутку при открытом меню
-
-    console.log(open)
-
 
     const widthForBurger = width && width <= 768
 
@@ -64,7 +62,7 @@ export const Header = () => {
                     </header> : <header className={s.burgerHeader}>
                         <div id={'hw5-header'} className={fixedHeader ? s.fixedHeaderBlock : s.headerBlock}>
                             <img
-                                src={burger}
+                                src={fixedHeader ? burger : burgerWhite}
                                 id={'hw5-burger-menu'}
                                 className={s.burgerMenuIcon}
                                 onClick={handleOpen}

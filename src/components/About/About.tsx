@@ -36,7 +36,7 @@ export const About = () => {
                             {
                                 progress.map(i => {
                                     return (
-                                        <ProgressItem id={i.id} title={i.title} value={i.value}/>
+                                        <ProgressItem key={i.id} id={i.id} title={i.title} value={i.value}/>
                                     )
                                 })
                             }
