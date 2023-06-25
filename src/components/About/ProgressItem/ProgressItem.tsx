@@ -1,5 +1,4 @@
 import React, {FC} from 'react';
-import {Box, LinearProgress, Typography} from '@mui/material';
 import s from './ProgressItem.module.scss'
 
 type ProgressType = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Projects.module.css'
+import s from './Projects.module.scss'
 import styleContainer from '../../common/styles/Container.module.css'
 import {ProjectItem} from './ProjectItem/ProjectItem';
 import {Element} from 'react-scroll';
@@ -15,6 +15,9 @@ const projectsItems = [
     {id: 3, title: 'Clone Instagram', description: 'React,Redux,Storybook', projectImg: todolistImg, link: ''},
 
 ]
+const projects = projectsItems.map(i => <ProjectItem key={i.id} link={i.link} id={i.id} title={i.title}
+                                                     description={i.description}
+                                                     projectImg={i.projectImg}/>)
 
 export const Projects = () => {
     return (
@@ -22,11 +25,7 @@ export const Projects = () => {
             <div className={`${styleContainer.container} ${s.projectContainer}`}>
                 <h2 className={s.title}>My project</h2>
                 <div className={s.projects}>
-                    {
-                        projectsItems.map(i => <ProjectItem key={i.id} link={i.link} id={i.id} title={i.title}
-                                                            description={i.description}
-                                                            projectImg={i.projectImg}/>)
-                    }
+                    {projects}
                 </div>
             </div>
         </Element>

@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './About.module.css'
+import s from './About.module.scss'
 import {Element, Link} from 'react-scroll';
 import styleContainer from '../../common/styles/Container.module.css'
 import {ProgressItem} from './ProgressItem/ProgressItem';
@@ -18,6 +18,7 @@ export const About = () => {
         const url = 'https://drive.google.com/uc?export=download&id=1H9UlTnDqcKopBQujJe7r0UpocnO94-hG';
         window.open(url, '_blank');
     }
+    const progressItem = progress.map(i => <ProgressItem key={i.id} id={i.id} title={i.title} value={i.value}/>)
 
     return (
         <Element name={'about'} id="about">
@@ -40,12 +41,11 @@ export const About = () => {
                                 specialist.</p>
                         </div>
                         <div className={s.skillLevelBlock}>
-                            {
-                                progress.map(i => <ProgressItem key={i.id} id={i.id} title={i.title} value={i.value}/>)
-                            }
+                            {progressItem}
                         </div>
                         <div className={s.buttonsBlock}>
-                            <Link spy={true} smooth={true} offset={-70} duration={500} to='contacts' className={s.hire}>HIRE ME</Link>
+                            <Link spy={true} smooth={true} offset={-70} duration={500} to="contacts" className={s.hire}>HIRE
+                                ME</Link>
                             <button className={s.download} onClick={downloadCV}>DOWNLOAD
                                 CV
                             </button>

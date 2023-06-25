@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import s from './Header.module.css'
+import s from './Header.module.scss'
 import styled from 'styled-components';
 import {Element, Link} from 'react-scroll';
 import useScrollPosition from '../../hooks/useScrollPosition';
@@ -8,7 +8,6 @@ import burger from '../../img/icons/burger.svg'
 import burgerWhite from '../../img/icons/burgerWhite.svg'
 import {Sidebar} from './Sidebar/Sidebar';
 import {LinkItem} from './LinkWrapper/LinkWrapper';
-
 
 const linked = [
     {id: 1, title: 'Home', to: 'home'},
@@ -20,23 +19,19 @@ const linked = [
 export const Header = () => {
     const scrollPosition = useScrollPosition();
     const {width} = useWindowSize()
-
     const [open, setOpen] = useState(false)
+    const [scrolled, setScrolled] = useState(0);
+
+    const widthForBurger = width && width <= 768
+    const fixedHeader = scrollPosition >= 100;
+
     const handleClose = () => setOpen(false)
     const handleOpen = () => setOpen(true)
+
     useEffect(() => {
         open && (document.body.style.overflow = 'hidden')
         !open && (document.body.style.overflow = 'unset')
     }, [open]) // отключает прокрутку при открытом меню
-
-    const widthForBurger = width && width <= 768
-
-
-    const [scrolled, setScrolled] = useState(0);
-    const handleScroll = () => {
-        const scrollTop = window.pageYOffset;
-        setScrolled(scrollTop);
-    };
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -45,32 +40,33 @@ export const Header = () => {
         };
     }, []);
 
+    const handleScroll = () => {
+        const scrollTop = window.pageYOffset;
+        setScrolled(scrollTop);
+    };
     const movingTextStyle = {
         transform: `translateY(-${scrolled * 0.4}px)`
     };
+    const linkItem = linked.map(l => <LinkItem key={l.id} to={l.to} fixedHeader={fixedHeader}
+                                               title={l.title}/>)
 
-    const fixedHeader = scrollPosition >= 100;
+
     return (
         <Element name={'/'} className={s.backgroundPhoto} id="home">
             <div className={`${s.headerContainer}`}>
                 {
                     !widthForBurger ? <header className={fixedHeader ? s.fixed : s.header}>
                         <nav className={fixedHeader ? s.fixedHeader : s.notFixedHeader}>
-                            {
-                                linked.map(l => <LinkItem key={l.id} to={l.to} fixedHeader={fixedHeader}
-                                                          title={l.title}/>)
-                            }
+                            {linkItem}
                         </nav>
                     </header> : <header className={s.burgerHeader}>
-                        <div id={'hw5-header'} className={fixedHeader ? s.fixedHeaderBlock : s.headerBlock}>
+                        <div className={fixedHeader ? s.fixedHeaderBlock : s.headerBlock}>
                             <img
                                 src={fixedHeader ? burger : burgerWhite}
-                                id={'hw5-burger-menu'}
                                 className={s.burgerMenuIcon}
                                 onClick={handleOpen}
                                 alt={'open menu'}
                             />
-                            <h1>{''}</h1>
                             <Sidebar width={fixedHeader} open={open} handleClose={handleClose}/>
                         </div>
                     </header>

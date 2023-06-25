@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 import {NavLink} from 'react-router-dom'
-import s from './Sidebar.module.css'
+import s from './Sidebar.module.scss'
 import closeIcon from '../../../img/icons/closeOutline.svg'
 import styled from 'styled-components';
 import {Link} from 'react-scroll';
@@ -25,14 +25,12 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     <img
                         src={closeIcon}
                         alt="close sidebar"
-                        id={''}
                     />
                 </button>
 
-                <nav id={'hw5-menu'} className={s.nav}>
+                <nav className={s.nav}>
                     <NavWrapper
                         spy={true} smooth={true} offset={-70} duration={500}
-                        id={''}
                         to={'/'}
                         onClick={handleClose}
                     >
@@ -40,7 +38,6 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     </NavWrapper>
                     <NavWrapper
                         spy={true} smooth={true} offset={-70} duration={500}
-                        id={''}
                         to={'about'}
                         onClick={handleClose}
                     >
@@ -48,7 +45,6 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     </NavWrapper>
                     <NavWrapper
                         spy={true} smooth={true} offset={-70} duration={500}
-                        id={''}
                         to={'projects'}
                         onClick={handleClose}
                     >
@@ -56,7 +52,6 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     </NavWrapper>
                     <NavWrapper
                         spy={true} smooth={true} offset={-70} duration={500}
-                        id={''}
                         to={'contacts'}
                         onClick={handleClose}
                     >
@@ -68,26 +63,6 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
     )
 }
 
-// const NavWrapper = styled.div`
-//   margin-bottom: 20px;
-//
-//   & > a {
-//     text-decoration: none;
-//     color: #000000;
-//     font-weight: 600;
-//     font-size: 22px;
-//   }
-//
-//   & > a.active {
-//     text-decoration: underline;
-//     color: #0059B2;
-//   }
-//
-//   & > a:hover {
-//     color: #58ACFF;
-//   }
-//
-// `
 const NavWrapper = styled(Link)`
   cursor: pointer;
   font-weight: 600;

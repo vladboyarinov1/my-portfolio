@@ -8,7 +8,6 @@ export const Contacts = () => {
         <Element name={'contacts'} className={s.contactsBlock} id={'contacts'}>
             <h3 className={s.title}>Contact Me</h3>
             <div className={`${styleContainer.container} ${s.contactsContainer}`}>
-
                 <div className={s.formAndContacts}>
                     <div>
                         <form className={s.form}>

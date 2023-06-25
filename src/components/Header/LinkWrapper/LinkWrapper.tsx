@@ -20,7 +20,7 @@ const LinkWrapper = styled(Link)<{ fixedHeader: boolean }>`
   font-size: 14px;
   text-decoration: none !important;
 
-  color: ${props => props.fixedHeader ? 'black' : 'rgba(255,255,255,0.8)'};
+  color: ${props => props.fixedHeader ? 'black' : 'rgba(255,255,255,0.75)'};
   position: relative;
 
   &.active {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styleContainer from '../../common/styles/Container.module.css'
-import s from './Footer.module.css'
+import s from './Footer.module.scss'
 import inst from '../../img/icons/instagram.svg'
 import telegram from '../../img/icons/telegram.svg'
 import linkedIn from '../../img/icons/linkedIn.svg'
