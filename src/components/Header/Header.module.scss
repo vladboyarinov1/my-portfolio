@@ -138,8 +138,29 @@ nav {
     justify-content: center !important;
   }
 
-  .welcomeBlock h1 {
-    font-size: 30px;
+  .welcomeBlock {
+    text-align: center;
+
+    & h1 {
+      z-index: 1;
+      font-size: 30px;
+      color: #fff;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    & p {
+      z-index: 1;
+      color: #fff;
+      font-size: 1.2rem;
+
+      & a {
+        z-index: 1;
+        color: #96bb7c;
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+    }
   }
 }
 

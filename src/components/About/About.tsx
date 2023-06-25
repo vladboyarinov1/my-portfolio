@@ -6,6 +6,7 @@ import {ProgressItem} from './ProgressItem/ProgressItem';
 import photo from '../../img/bg2.jpg'
 
 
+
 const progress = [
     {id: 1, title: 'HTML', value: 90},
     {id: 2, title: 'CSS', value: 80},
