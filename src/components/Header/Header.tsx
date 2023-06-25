@@ -8,6 +8,7 @@ import burger from '../../img/icons/burger.svg'
 import burgerWhite from '../../img/icons/burgerWhite.svg'
 import {Sidebar} from './Sidebar/Sidebar';
 import {LinkItem} from './LinkWrapper/LinkWrapper';
+import bg from '../../img/bg.jpg'
 
 const linked = [
     {id: 1, title: 'Home', to: 'home'},
@@ -52,7 +53,7 @@ export const Header = () => {
 
 
     return (
-        <Element name={'/'} className={s.backgroundPhoto} id="home">
+        <Element name={'/'} className={s.backgroundPhoto} style={{backgroundImage: `url(${bg})`}} id="home">
             <div className={`${s.headerContainer}`}>
                 {
                     !widthForBurger ? <header className={fixedHeader ? s.fixed : s.header}>

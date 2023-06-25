@@ -3,6 +3,7 @@ import s from './About.module.scss'
 import {Element, Link} from 'react-scroll';
 import styleContainer from '../../common/styles/Container.module.css'
 import {ProgressItem} from './ProgressItem/ProgressItem';
+import photo from '../../img/bg2.jpg'
 
 
 const progress = [
@@ -25,7 +26,7 @@ export const About = () => {
             <main className={s.main}>
                 <div className={styleContainer.container}>
                     <div className={s.imgBlock}>
-                        <img src="https://pbs.twimg.com/media/DcT2RhEU8AIFvXu?format=jpg&name=4096x4096" alt=""/>
+                        <img src={photo} alt=""/>
                     </div>
                     <div className={s.bioBlock}>
                         <div className={s.textBlock}>
