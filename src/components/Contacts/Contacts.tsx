@@ -43,16 +43,16 @@ export const Contacts = () => {
                                 className={s.address}></span><span className={s.addressText}>Belarus, Minsk</span></a>
                             </li>
 
-                            <li><a href="tel:+375298336185"><span
+                            <li><a href="tel:+375298336185" target='_blank'><span
                                 className={s.phone}></span><span>+375298336185</span></a>
                             </li>
 
-                            <li><a href="mailto:boyarinov.2002@bk.ru"><span
+                            <li><a href="mailto:boyarinov.2002@bk.ru" target='_blank'><span
                                 className={s.email}></span><span>boyarinov.2002@bk.ru</span></a>
                             </li>
 
-                            <li><a href="https://t.me/boyarinov_1"><span
-                                className={s.telegram}></span><span>https://github.com/vladboyarinov1</span></a>
+                            <li><a href="https://t.me/boyarinov_1" target='_blank'><span
+                                className={s.telegram}></span><span>@boyarinov_1</span></a>
                             </li>
                         </ul>
                     </div>
