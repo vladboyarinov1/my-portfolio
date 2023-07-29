@@ -4,7 +4,11 @@ import {Element, Link} from 'react-scroll';
 import styleContainer from '../../common/styles/Container.module.css'
 import {ProgressItem} from './ProgressItem/ProgressItem';
 import photo from '../../img/bg2.jpg'
-
+import {Skills} from './Skills/Skills';
+import {Experience} from './Experience/Experience';
+import {BrowserRouter, NavLink, Route, Routes} from 'react-router-dom';
+import styled from 'styled-components';
+import {Education} from './Education/Education';
 
 
 const progress = [
@@ -33,20 +37,40 @@ export const About = () => {
                         <div className={s.textBlock}>
                             <h2>My Bio</h2>
                             <p>Hi! My name is Vlad and I am studying web development courses and pursuing higher
-                                education in information technology. I am interested in developing user interfaces and
-                                web applications, and I have gained knowledge in HTML, CSS, JavaScript and React in my
+                                education in information technology. I am interested in developing user interfaces
+                                and
+                                web applications, and I have gained knowledge in HTML, CSS, JavaScript and React in
+                                my
                                 courses and at the university. </p>
                             <p className={s.bioText}>I have participated in several projects, including creating a
-                                website for selling goods, as well as a portfolio site to demonstrate my skills. I also
-                                devote time to self-study and learning new web development technologies. I am ready to
+                                website for selling goods, as well as a portfolio site to demonstrate my skills. I
+                                also
+                                devote time to self-study and learning new web development technologies. I am ready
+                                to
                                 implement new projects and improve my skills to become a qualified web development
                                 specialist.</p>
                         </div>
-                        <div className={s.skillLevelBlock}>
-                            {progressItem}
+
+                        <div className={s.menu}>
+                            <NavWrapper><NavLink to="/skills"><p>Skills</p>
+                            </NavLink></NavWrapper>
+                            <NavWrapper><NavLink to="/experience"><p>Experience</p>
+                            </NavLink></NavWrapper>
+                            <NavWrapper><NavLink to="/education"><p>Education</p>
+                            </NavLink></NavWrapper>
+
                         </div>
+                        <Routes>
+                            <Route path="/skills"
+                                   element={<Skills/>}/>
+                            <Route path="/experience"
+                                   element={<Experience/>}/>
+                            <Route path="/education"
+                                   element={<Education/>}/>
+                        </Routes>
                         <div className={s.buttonsBlock}>
-                            <Link spy={true} smooth={true} offset={-70} duration={500} to="contacts" className={s.hire}>HIRE
+                            <Link spy={true} smooth={true} offset={-70} duration={500} to="contacts"
+                                  className={s.hire}>HIRE
                                 ME</Link>
                             <button className={s.download} onClick={downloadCV}>DOWNLOAD
                                 CV
@@ -58,3 +82,44 @@ export const About = () => {
         </Element>
     );
 };
+
+const NavWrapper = styled.div`
+
+  font-size: 18px;
+  margin-bottom: 1rem;
+  @media only screen and (max-width: 600px) {
+  }
+
+  & a.active::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 2px;
+    background-color: #96bb7c;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+  }
+
+  & a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  & a:first-child {
+    padding-left: 0;
+  }
+
+  & > a.active {
+    text-decoration: none;
+    color: #96bb7c;
+  }
+
+  //& > a:hover {
+  //  color: dodgerblue;
+  //}
+`
