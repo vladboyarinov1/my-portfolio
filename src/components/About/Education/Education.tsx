@@ -29,9 +29,9 @@ const ColorlibConnector = styled(StepConnector)(({theme}) => ({
         },
     },
     [`& .${stepConnectorClasses.line}`]: {
-        minHeight: 50,
+        minHeight: 70,
         maxWidth: 2,
-        margin: 10,
+        margin: '20px 0px 20px 10px',
         border: 0,
         backgroundColor:
             theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
@@ -83,15 +83,18 @@ function ColorlibStepIcon(props: StepIconProps) {
 
 interface StepType {
     label: string;
-    description: string;
+    description: any;
 }
 
+const description = <p>Faculty of Information Technology and Robotics.<br/>
+
+    Information Technology Software. <br/>
+
+    2020 - 2024</p>
 const steps: StepType[] = [
     {
         label: 'Belarusian National Technical University',
-        description: `Faculty of Information Technology and Robotics. Information Technology Software.
-       2020 - 2024`,
-
+        description: description
     },
     {
         label: 'IT-INCUBATOR',
@@ -109,8 +112,11 @@ export function Education() {
             >
                 {steps.map((label) => (
                     <Step key={label.label}>
-                        <StepLabel  StepIconComponent={ColorlibStepIcon}>
-                            <Typography style={{fontFamily: ' \'Nunito\', sans-serif', fontWeight: '600'}}>{label.label}</Typography>
+                        <StepLabel StepIconComponent={ColorlibStepIcon}>
+                            <Typography style={{
+                                fontFamily: ' \'Nunito\', sans-serif',
+                                fontWeight: '600'
+                            }}>{label.label}</Typography>
                         </StepLabel>
                         <Typography style={{
                             position: 'absolute',
