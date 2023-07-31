@@ -16,7 +16,7 @@ export const SwitchTheme: FC<PropsSwitchThemeType> = ({setDarkMode, isDark}) => 
         }
     }
     return (
-        <FormGroup style={{paddingTop: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+        <FormGroup style={{paddingTop: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
             <FormControlLabel
                 control={<MaterialUISwitch  theme={theme}  defaultChecked={isDark}
                                  onChange={(e) => setDarkMode(e.currentTarget.checked)}/>}
