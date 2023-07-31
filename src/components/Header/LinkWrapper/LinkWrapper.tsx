@@ -23,7 +23,7 @@ const LinkWrapper = styled(Link)<{ fixedHeader: boolean , isDark: boolean}>`
 
     // color: ${props => props.fixedHeader ? 'black' : 'rgba(255,255,255,0.75)'};
   // position: relative;
-  color: ${props => props.fixedHeader ? (props.isDark ? 'white' : 'black') : 'white'};
+  color: ${props => props.fixedHeader ? (props.isDark ? 'rgba(255,255,255,0.75)' : 'black') : 'rgba(255,255,255,0.75)'};
 
   &.active {
     text-decoration: underline;

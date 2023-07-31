@@ -7,7 +7,7 @@ const progress = [
     {id: 2, title: 'CSS', value: 80},
     {id: 3, title: 'JS', value: 60},
     {id: 4, title: 'React', value: 75},
-    {id: 5, title: 'Storybook', value: 40},
+    {id: 5, title: 'Storybook', value: 80},
 ]
 
 export const Skills: FC<any> = () => {

@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
-import {NavLink} from 'react-router-dom'
 import s from './Sidebar.module.scss'
 import closeIcon from '../../../img/icons/closeOutline.svg'
+import closeIconWhite from '../../../img/icons/closeOutlineWhite.svg'
 import styled from 'styled-components';
 import {Link} from 'react-scroll';
 
@@ -24,7 +24,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose, isDark}) => {
             <aside style={isDark ? {backgroundColor: '#3b3b3b'} : {backgroundColor: 'white'}} className={sidebarClass}>
                 <button  className={open ? s.close : s.closeNotOpen} onClick={handleClose}>
                     <img
-                        src={closeIcon}
+                        src={isDark ? closeIconWhite : closeIcon}
                         alt="close sidebar"
                     />
                 </button>

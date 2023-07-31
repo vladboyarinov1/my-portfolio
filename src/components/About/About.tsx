@@ -5,7 +5,7 @@ import styleContainer from '../../common/styles/Container.module.css'
 import photo from '../../img/bg2.jpg'
 import {Skills} from './Skills/Skills';
 import {Experience} from './Experience/Experience';
-import {Navigate, NavLink, Route, Routes, useLocation, useNavigate} from 'react-router-dom';
+import {NavLink, Route, Routes, useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 import {Education} from './Education/Education';
 
@@ -101,11 +101,12 @@ const NavWrapper = styled.div<{ isDark: boolean }>`
 
   & a {
     position: relative;
-    color: ${props => props.isDark ? 'yellow' : 'black'};
+    color: ${props => props.isDark ? 'white' : 'black'};
     text-decoration: none;
     padding: 10px 14px;
     display: flex;
     align-items: center;
+    font-weight: 600;
   }
 
   & a:first-child {

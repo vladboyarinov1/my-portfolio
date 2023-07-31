@@ -10,7 +10,6 @@ import {Sidebar} from './Sidebar/Sidebar';
 import {LinkItem} from './LinkWrapper/LinkWrapper';
 import bg from '../../img/bg.jpg'
 import bg2 from '../../img/bgMob.jpg'
-import {FormControlLabel, FormGroup, Switch} from '@mui/material';
 import {SwitchTheme} from '../../common/components/SwitchTheme/SwitchTheme';
 
 
@@ -67,7 +66,7 @@ export const Header: FC<PropsType> = ({setDarkMode, isDark}) => {
             <div className={`${s.headerContainer}`}>
                 {
                     !widthForBurger ? <header className={fixedHeader ? s.fixed : s.header}
-                                              style={isDark ? {backgroundColor: '#3b3b3b'} : {backgroundColor: 'white'}}>
+                                              style={isDark ? {backgroundColor: '#212020'} : {backgroundColor: 'white'}}>
                         <nav>
                             {linkItem}
                             {fixedHeader ? <SwitchTheme setDarkMode={setDarkMode} isDark={isDark}/> : ''}
@@ -77,7 +76,7 @@ export const Header: FC<PropsType> = ({setDarkMode, isDark}) => {
                         <div className={headerClassName}>
                             {fixedHeader ? <SwitchTheme setDarkMode={setDarkMode} isDark={isDark}/> : ''}
                             <img
-                                src={fixedHeader ? burger : burgerWhite}
+                                src={fixedHeader ? (isDark ? burgerWhite : burger) : burgerWhite}
                                 className={s.burgerMenuIcon}
                                 onClick={handleOpen}
                                 alt={'open menu'}

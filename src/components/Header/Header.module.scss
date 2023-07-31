@@ -49,7 +49,7 @@ nav {
   width: 100%;
   height: auto;
   //background-image: url("https://disk.yandex.ru/d/bCiHO9-t-Il-Kg/ausiannikau.artyom-23.jpg");
-  min-width: 300px;
+  min-width: 370px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% -25px;
@@ -62,7 +62,7 @@ nav {
     right: 0;
     top: 0;
     background: rgba(0, 0, 0, 0.4);
-    min-width: 300px;
+    min-width: 370px;
     height: 100vh;
   }
 }
@@ -81,14 +81,14 @@ nav {
   & h1 {
     z-index: 1;
     font-size: 50px;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.85);
     font-weight: 900;
     line-height: 1;
   }
 
   & p {
     z-index: 1;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.85);
     font-size: 1.2rem;
 
     & a {
@@ -112,7 +112,7 @@ nav {
   height: 52px;
   display: flex;
   width: 100%;
-  padding: 15px 55px 20px 0;;
+  padding: 15px 10px 20px 0;;
   min-width: 360px;
   justify-content: flex-end;
 }
@@ -122,7 +122,7 @@ nav {
   display: flex;
   width: 100%;
   align-items: center;
-  padding: 0 70px;
+  padding: 0 10px;
   z-index: 999;
   min-width: 360px;
   margin: 0 auto;
@@ -134,7 +134,7 @@ nav {
   box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
 }
 .fixedHeaderDark {
-  background-color: rgb(59, 59, 59);
+  background-color: #212020;
 }
 
 
@@ -149,14 +149,14 @@ nav {
     & h1 {
       z-index: 1;
       font-size: 30px;
-      color: #fff;
+      color: rgba(255, 255, 255, 0.8);
       font-weight: 900;
       line-height: 1;
     }
 
     & p {
       z-index: 1;
-      color: #fff;
+      color: rgba(255, 255, 255, 0.9);
       font-size: 1.2rem;
 
       & a {
