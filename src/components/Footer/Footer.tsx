@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styleContainer from '../../common/styles/Container.module.css'
 import s from './Footer.module.scss'
 import inst from '../../img/icons/instagram.svg'
@@ -7,10 +7,12 @@ import linkedIn from '../../img/icons/linkedIn.svg'
 import vk from '../../img/icons/vk.svg'
 import git from '../../img/icons/git.svg'
 
-
-export const Footer = () => {
+type PropsType = {
+    isDark: boolean
+}
+export const Footer: FC<PropsType> = ({isDark}) => {
     return (
-        <footer className={s.footerBlock}>
+        <footer className={isDark ? `${s.footerBlock}  ${s.footerDark}` : s.footerBlock}>
             <div className={`${styleContainer.container} ${s.footerContainer}`}>
                 <p>Vladislav Boiarinov</p>
                 <div className={s.socialIcons}>
@@ -30,7 +32,7 @@ export const Footer = () => {
                         <img src={vk} alt="VK"/>
                     </a>
                 </div>
-                <p className={s.copyright}>© 2023 Все права защищены</p>
+                <p className={s.copyright}>© 2023 All rights reserved</p>
             </div>
         </footer>
     );

@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 import s from './About.module.scss'
 import {Element, Link} from 'react-scroll';
 import styleContainer from '../../common/styles/Container.module.css'
-import {ProgressItem} from './ProgressItem/ProgressItem';
 import photo from '../../img/bg2.jpg'
 import {Skills} from './Skills/Skills';
 import {Experience} from './Experience/Experience';
@@ -10,8 +9,11 @@ import {Navigate, NavLink, Route, Routes, useLocation, useNavigate} from 'react-
 import styled from 'styled-components';
 import {Education} from './Education/Education';
 
+type PropsType = {
+    isDark: boolean
+}
 
-export const About = () => {
+export const About: FC = () => {
     const downloadCV = () => {
         const url = 'https://drive.google.com/uc?export=download&id=1H9UlTnDqcKopBQujJe7r0UpocnO94-hG';
         window.open(url, '_blank');
@@ -50,11 +52,11 @@ export const About = () => {
                                 endeavors.</p>
                         </div>
                         <div className={s.menu}>
-                            <NavWrapper><NavLink to="/skills"><p>Skills</p>
+                            <NavWrapper isDark><NavLink to="/skills"><p>Skills</p>
                             </NavLink></NavWrapper>
-                            <NavWrapper><NavLink to="/experience"><p>Experience</p>
+                            <NavWrapper isDark><NavLink to="/experience"><p>Experience</p>
                             </NavLink></NavWrapper>
-                            <NavWrapper><NavLink to="/education"><p>Education</p>
+                            <NavWrapper isDark><NavLink to="/education"><p>Education</p>
                             </NavLink></NavWrapper>
                         </div>
                         <Routes>
@@ -80,8 +82,7 @@ export const About = () => {
     );
 };
 
-const NavWrapper = styled.div`
-
+const NavWrapper = styled.div<{isDark: boolean}>`
   font-size: 18px;
   margin-bottom: 1rem;
   @media only screen and (max-width: 600px) {
@@ -100,7 +101,7 @@ const NavWrapper = styled.div`
 
   & a {
     position: relative;
-    color: black;
+    color: ${props => props.isDark ? 'white' : 'black'};
     text-decoration: none;
     padding: 10px 14px;
     display: flex;
