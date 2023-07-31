@@ -10,12 +10,12 @@ type PropsSwitchThemeType = {
 
 export const SwitchTheme: FC<PropsSwitchThemeType> = ({setDarkMode, isDark}) => {
     return (
-        <FormGroup style={{paddingTop: '10px', display: 'block'}}>
+        <FormGroup style={{paddingTop: '10px'}}>
             <FormControlLabel
-                control={<Switch color='default'  size="medium" defaultChecked={isDark}
+                control={<Switch color='success'  size="medium" defaultChecked={isDark}
                                  onChange={(e) => setDarkMode(e.currentTarget.checked)}/>}
-                label={isDark ? < DarkModeIcon style={{display: 'flex', alignItems: 'center'}} fontSize={'medium'}/> :
-                    <LightModeIcon style={{display: 'flex', alignItems: 'center'}} fontSize={'medium'}/>}/>
+                label={isDark ? < DarkModeIcon style={{display: 'flex', alignItems: 'center'}} fontSize={'small'}/> :
+                    <LightModeIcon  style={{display: 'flex', alignItems: 'center'}} fontSize={'small'}/>}/>
         </FormGroup>
     );
 };
