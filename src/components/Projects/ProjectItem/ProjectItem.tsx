@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, {FC, useState} from 'react';
 import s from './ProjectItem.module.css';
 import styled from 'styled-components';
 
@@ -8,6 +8,7 @@ type PropsType = {
     description: string;
     projectImg: string;
     link: string;
+    isDark: boolean
 };
 
 export const ProjectItem: FC<PropsType> = ({
@@ -16,6 +17,7 @@ export const ProjectItem: FC<PropsType> = ({
                                                description,
                                                projectImg,
                                                link,
+                                               isDark
                                            }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -28,13 +30,15 @@ export const ProjectItem: FC<PropsType> = ({
     };
 
     return (
-        <div className={s.project}>
-            <ImgContainer href={link} target='_blank'
-                imgUrl={projectImg}
-                className={s.imgContainer}
-                isHovered={isHovered}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+        <div className={s.project} style={isDark ? {
+            boxShadow: '6px 6px 6px rgba(255, 255, 255, 0.4)'
+        } : {boxShadow: '6px 6px 6px rgba(0, 0, 0, 0.2'}}>
+            <ImgContainer href={link} target="_blank"
+                          imgUrl={projectImg}
+                          className={s.imgContainer}
+                          isHovered={isHovered}
+                          onMouseEnter={handleMouseEnter}
+                          onMouseLeave={handleMouseLeave}
             >
                 {/*<a href={link} className={s.button} target="_blank" rel="noopener noreferrer">*/}
                 {/*    View*/}
@@ -60,6 +64,7 @@ const ImgContainer = styled.a<{ imgUrl: string; isHovered: boolean }>`
   cursor: pointer;
   border-radius: 4px 4px 0 0;
 
+
   &::before {
     content: '';
     position: absolute;
@@ -69,8 +74,12 @@ const ImgContainer = styled.a<{ imgUrl: string; isHovered: boolean }>`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    opacity: ${(props) => (props.isHovered ? 1 : 0)};
+    opacity: ${(props) => (props.isHovered ? 1 : 0.3)};
     transition: all 0.3s;
+  }
+
+  &:focus {
+    backdrop-filter: blur(1);
   }
 
   &:hover {
@@ -89,10 +98,9 @@ const ImgContainer = styled.a<{ imgUrl: string; isHovered: boolean }>`
     transform: translate(-50%, -50%);
     color: #fff;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 600;
     opacity: 0;
     transition: all 0.3s;
-    color: #96bb7c;
   }
 
   /* Позволяет кликать на элемент a, даже если у него есть псевдоэлементы */
