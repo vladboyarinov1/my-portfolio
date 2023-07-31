@@ -40,9 +40,6 @@ export const ProjectItem: FC<PropsType> = ({
                           onMouseEnter={handleMouseEnter}
                           onMouseLeave={handleMouseLeave}
             >
-                {/*<a href={link} className={s.button} target="_blank" rel="noopener noreferrer">*/}
-                {/*    View*/}
-                {/*</a>*/}
             </ImgContainer>
             <div className={s.text}>
                 <h2 className={s.title}>{title}</h2>
