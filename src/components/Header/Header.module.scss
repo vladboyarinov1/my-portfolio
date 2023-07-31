@@ -129,9 +129,12 @@ nav {
   justify-content: flex-end;
   position: fixed;
   transition: height 0.5s ease-out;
-  text-align: center;
   background-color: white;
   box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+}
+.burgerHeader {
+  display: flex;
+  text-align: center;
 }
 .fixedHeaderDark {
   background-color: #212020;

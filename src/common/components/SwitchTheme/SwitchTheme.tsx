@@ -10,7 +10,7 @@ type PropsSwitchThemeType = {
 
 export const SwitchTheme: FC<PropsSwitchThemeType> = ({setDarkMode, isDark}) => {
     return (
-        <FormGroup sx={{marginTop: '10px'}}>
+        <FormGroup style={{paddingTop: '10px', display: 'block'}}>
             <FormControlLabel
                 control={<Switch color='default'  size="medium" defaultChecked={isDark}
                                  onChange={(e) => setDarkMode(e.currentTarget.checked)}/>}
