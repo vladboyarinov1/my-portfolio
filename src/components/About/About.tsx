@@ -13,7 +13,7 @@ type PropsType = {
     isDark: boolean
 }
 
-export const About: FC = () => {
+export const About: FC<PropsType> = ({isDark}) => {
     const downloadCV = () => {
         const url = 'https://drive.google.com/uc?export=download&id=1H9UlTnDqcKopBQujJe7r0UpocnO94-hG';
         window.open(url, '_blank');
@@ -52,11 +52,11 @@ export const About: FC = () => {
                                 endeavors.</p>
                         </div>
                         <div className={s.menu}>
-                            <NavWrapper isDark><NavLink to="/skills"><p>Skills</p>
+                            <NavWrapper isDark={isDark}><NavLink to="/skills"><p>Skills</p>
                             </NavLink></NavWrapper>
-                            <NavWrapper isDark><NavLink to="/experience"><p>Experience</p>
+                            <NavWrapper isDark={isDark}><NavLink to="/experience"><p>Experience</p>
                             </NavLink></NavWrapper>
-                            <NavWrapper isDark><NavLink to="/education"><p>Education</p>
+                            <NavWrapper isDark={isDark}><NavLink to="/education"><p>Education</p>
                             </NavLink></NavWrapper>
                         </div>
                         <Routes>
@@ -82,7 +82,7 @@ export const About: FC = () => {
     );
 };
 
-const NavWrapper = styled.div<{isDark: boolean}>`
+const NavWrapper = styled.div<{ isDark: boolean }>`
   font-size: 18px;
   margin-bottom: 1rem;
   @media only screen and (max-width: 600px) {
@@ -101,7 +101,7 @@ const NavWrapper = styled.div<{isDark: boolean}>`
 
   & a {
     position: relative;
-    color: ${props => props.isDark ? 'white' : 'black'};
+    color: ${props => props.isDark ? 'yellow' : 'black'};
     text-decoration: none;
     padding: 10px 14px;
     display: flex;

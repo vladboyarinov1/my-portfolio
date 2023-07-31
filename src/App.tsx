@@ -46,7 +46,7 @@ function App() {
         <ThemeProvider theme={customTheme}>
             <CssBaseline/>
             <Header setDarkMode={setDarkMode} isDark={isDark}/>
-            <About/>
+            <About isDark={isDark}/>
             <Projects isDark={isDark}/>
             <Contacts/>
             <Footer isDark={isDark}/>
