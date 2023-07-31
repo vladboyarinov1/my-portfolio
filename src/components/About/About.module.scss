@@ -36,14 +36,14 @@
     line-height: 1.6;
     background: #ffffff;
     overflow-x: hidden;
-    font-size: 16px;
+    font-size: 15px;
     color: #939393;
   }
 }
 
 .bioText {
-  margin-bottom: 3rem !important;
-  margin-top: 1rem;
+  margin-bottom: 0.5rem !important;
+  margin-top: 0.5rem;
 }
 
 .buttonsBlock {
@@ -66,6 +66,7 @@
 .menu {
   display: flex;
   color: #96bb7c;
+  margin-top: 10px;
 
 }
 

@@ -33,21 +33,22 @@ export const About = () => {
                     <div className={s.bioBlock}>
                         <div className={s.textBlock}>
                             <h2>My Bio</h2>
-                            <p>Hi! My name is Vlad and I am studying web development courses and pursuing higher
-                                education in information technology. I am interested in developing user interfaces
-                                and
-                                web applications, and I have gained knowledge in HTML, CSS, JavaScript and React in
-                                my
-                                courses and at the university. </p>
-                            <p className={s.bioText}>I have participated in several projects, including creating a
-                                website for selling goods, as well as a portfolio site to demonstrate my skills. I
-                                also
-                                devote time to self-study and learning new web development technologies. I am ready
-                                to
-                                implement new projects and improve my skills to become a qualified web development
-                                specialist.</p>
+                            <p>Hello and welcome to my portfolio website! My name is Vlad and I am a student at the
+                                Belarusian National Technical University, where I am studying "Software for Information
+                                Technologies". I am also taking courses at IT-INCUBATOR to deepen my knowledge in
+                                software development.</p>
+                            <p className={s.bioText}>My main area of focus in development is Frontend. I am confident in
+                                my knowledge of the modern technology stack, and I am ready to apply it to solve even
+                                the most complex tasks. My modern technology stack includes HTML, CSS, JavaScript,
+                                TypeScript, React, Redux-Saga, Formik, React-Query, Apollo GraphQL, Material UI, and
+                                Storybook. I also have experience working with React Native and REST API.
+                            </p>
+                            <p>Furthermore, I am a highly skilled athlete and have the title of Master of Sports of
+                                Belarus in Cross-Country Skiing. My sports career required the highest level of
+                                dedication. These valuable skills that I developed in sports also help
+                                me in working on software projects and achieving success in my professional
+                                endeavors.</p>
                         </div>
-
                         <div className={s.menu}>
                             <NavWrapper><NavLink to="/skills"><p>Skills</p>
                             </NavLink></NavWrapper>
