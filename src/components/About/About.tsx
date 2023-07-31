@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './About.module.scss'
 import {Element, Link} from 'react-scroll';
 import styleContainer from '../../common/styles/Container.module.css'
@@ -6,25 +6,22 @@ import {ProgressItem} from './ProgressItem/ProgressItem';
 import photo from '../../img/bg2.jpg'
 import {Skills} from './Skills/Skills';
 import {Experience} from './Experience/Experience';
-import {BrowserRouter, NavLink, Route, Routes} from 'react-router-dom';
+import {Navigate, NavLink, Route, Routes, useLocation, useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 import {Education} from './Education/Education';
 
-
-const progress = [
-    {id: 1, title: 'HTML', value: 90},
-    {id: 2, title: 'CSS', value: 80},
-    {id: 3, title: 'JS', value: 60},
-    {id: 4, title: 'React', value: 75},
-    {id: 5, title: 'Storybook', value: 40},
-]
 
 export const About = () => {
     const downloadCV = () => {
         const url = 'https://drive.google.com/uc?export=download&id=1H9UlTnDqcKopBQujJe7r0UpocnO94-hG';
         window.open(url, '_blank');
     }
-    const progressItem = progress.map(i => <ProgressItem key={i.id} id={i.id} title={i.title} value={i.value}/>)
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        navigate('/skills');
+    }, []);
 
     return (
         <Element name={'about'} id="about">
@@ -58,7 +55,6 @@ export const About = () => {
                             </NavLink></NavWrapper>
                             <NavWrapper><NavLink to="/education"><p>Education</p>
                             </NavLink></NavWrapper>
-
                         </div>
                         <Routes>
                             <Route path="/skills"

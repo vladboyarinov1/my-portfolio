@@ -8,7 +8,9 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import StepConnector, {stepConnectorClasses} from '@mui/material/StepConnector';
 import {StepIconProps} from '@mui/material/StepIcon';
 import * as dgram from 'dgram';
+import {ReactComponent as ReactImg} from '../../../img/icons/react.svg'
 import {Step, StepContent, Typography} from '@mui/material';
+import {brown} from '@mui/material/colors';
 
 const ColorlibConnector = styled(StepConnector)(({theme}) => ({
     [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -66,7 +68,7 @@ function ColorlibStepIcon(props: StepIconProps) {
 
     const icons: { [index: string]: React.ReactElement } = {
         1: <SchoolIcon/>,
-        2: <PsychologyIcon/>
+        2: <ReactImg/>
     };
 
     return (
@@ -87,12 +89,13 @@ interface StepType {
 const steps: StepType[] = [
     {
         label: 'Belarusian National Technical University',
-        description: `lalalkkkmmkkm`,
+        description: `Faculty of Information Technology and Robotics. Information Technology Software.
+       2020 - 2024`,
 
     },
     {
         label: 'IT-INCUBATOR',
-        description: `lalal`,
+        description: `2023 - 2024`,
     }
 ];
 
@@ -106,12 +109,15 @@ export function Education() {
             >
                 {steps.map((label) => (
                     <Step key={label.label}>
-                        <StepLabel StepIconComponent={ColorlibStepIcon}>
-                            {label.label}
+                        <StepLabel  StepIconComponent={ColorlibStepIcon}>
+                            <Typography style={{fontFamily: ' \'Nunito\', sans-serif', fontWeight: '600'}}>{label.label}</Typography>
                         </StepLabel>
-                        <StepContent>
-                            <Typography>{label.description}</Typography>
-                        </StepContent>
+                        <Typography style={{
+                            position: 'absolute',
+                            marginLeft: '60px',
+                            fontFamily: ' \'Nunito\', sans-serif',
+                            // fontSize: '16px'
+                        }}>{label.description}</Typography>
                     </Step>
                 ))}
             </Stepper>
