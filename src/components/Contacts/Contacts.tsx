@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Contacts.module.scss'
 import styleContainer from '../../common/styles/Container.module.css'
 import {Element} from 'react-scroll';
+import {SendForm} from './SendForm/SendForm';
 
 export const Contacts = () => {
     return (
@@ -9,33 +10,7 @@ export const Contacts = () => {
             <h3 className={s.title}>Contact Me</h3>
             <div className={`${styleContainer.container} ${s.contactsContainer}`}>
                 <div className={s.formAndContacts}>
-                    <div>
-                        <form className={s.form}>
-                            <div className={s.nameFormBlock}>
-                                <div>
-                                    <div className={s.firstName}>
-                                        <label className="" htmlFor="fname">First name</label>
-                                        <input type="text" className="form-control" id="fname"/>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>
-                                        <label className="">Last name</label>
-                                        <input type="text" className="form-control"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={s.emailFormBlock}>
-                                <label className="" htmlFor="email">Email address</label>
-                                <input type="email"/>
-                            </div>
-                            <div className={s.messageFormBlock}>
-                                <label className="">Message</label>
-                                <textarea className={s.messageInput} id="message" cols={30} rows={5}></textarea>
-                            </div>
-                            <button type="submit" className={s.button}>Send Message</button>
-                        </form>
-                    </div>
+                 <SendForm/>
                     <div className={s.contactsInfoBlock}>
                         <h3 className={s.contactsTitle}>Contacts Info</h3>
                         <ul>
