@@ -4,9 +4,9 @@ import {ProgressItem} from '../ProgressItem/ProgressItem';
 
 const progress = [
     {id: 1, title: 'HTML', value: 90},
-    {id: 2, title: 'CSS', value: 80},
-    {id: 3, title: 'JS', value: 60},
-    {id: 4, title: 'React', value: 75},
+    {id: 2, title: 'CSS', value: 90},
+    {id: 3, title: 'JS', value: 75},
+    {id: 4, title: 'React', value: 80},
     {id: 5, title: 'Storybook', value: 80},
 ]
 

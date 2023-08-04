@@ -3,11 +3,12 @@ import React, {FC} from 'react';
 export const Experience: FC<any> = () => {
     return (
         <div style={{color: '#939393', lineHeight: '1.6'}}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ipsa, saepe. Cumque eveniet officia
-            sint. Aliquam aliquid atque facere repellat ut vel vitae voluptatibus voluptatum? Accusantium aliquam,
-            architecto asperiores blanditiis debitis eum excepturi fugit hic impedit ipsum labore magnam modi similique
-            totam veritatis? Dolorem doloremque eligendi est expedita perspiciatis provident recusandae sunt tempora!
-            Aspernatur blanditiis consequatur, ea libero omnis possimus praesentium ullam veniam voluptates. Quis.
+            Currently studying at the Belarusian National Technical University, specializing in Software for Information
+            Technologies.
+            Engaging in practical coursework that involves developing software projects aligned with real-world
+            scenarios.
+            Actively participating in group projects, applying acquired knowledge and fostering collaboration skills.
+            Expanding competencies through independent exploration of emerging technologies and tools in the field.
         </div>
     );
 };

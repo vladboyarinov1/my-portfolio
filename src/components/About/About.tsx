@@ -15,7 +15,7 @@ type PropsType = {
 
 export const About: FC<PropsType> = ({isDark}) => {
     const downloadCV = () => {
-        const url = 'https://drive.google.com/uc?export=download&id=1H9UlTnDqcKopBQujJe7r0UpocnO94-hG';
+        const url = 'https://drive.google.com/file/d/10qbkQRrvRtyeuKRplHFtsGaCzDEGHaAF/view?usp=sharing';
         window.open(url, '_blank');
     }
 

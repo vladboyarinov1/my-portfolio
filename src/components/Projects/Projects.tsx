@@ -12,11 +12,11 @@ type PropsType = {
 
 const projectsItems = [
     {
-        id: 1, title: 'Todo-list', description: 'React,Redux,Storybook',
+        id: 1, title: 'Todo-list (in development)', description: 'React,Redux,Storybook',
         projectImg: todolistImg, link: 'https://github.com/vladboyarinov1/todolist'
     },
-    {id: 2, title: 'Social Network', description: 'React,Redux,Storybook', projectImg: socialImg, link: ''},
-    {id: 3, title: 'Clone Instagram', description: 'React,Redux,Storybook', projectImg: todolistImg, link: ''},
+    {id: 2, title: 'Social Network (in development)', description: 'React,Redux,Storybook', projectImg: socialImg, link: 'https://github.com/vladboyarinov1'},
+    {id: 3, title: `Clone Instagram (in development)`, description: 'React,Redux,Storybook', projectImg: todolistImg, link: 'https://github.com/vladboyarinov1'},
 
 ]
 
