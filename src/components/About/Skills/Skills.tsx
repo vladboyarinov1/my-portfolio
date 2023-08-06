@@ -11,7 +11,7 @@ const progress = [
 ]
 
 export const Skills: FC<any> = () => {
-    const progressItem = progress.map(i => <ProgressItem key={i.id} id={i.id} title={i.title} value={i.value}/>)
+    const progressItem = progress.map(i => <ProgressItem key={i.id}  title={i.title} value={i.value}/>)
     return (
         <div>
             <div className={s.skillLevelBlock}>

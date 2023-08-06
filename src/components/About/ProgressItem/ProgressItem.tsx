@@ -1,21 +1,47 @@
-import React, {FC} from 'react';
-import s from './ProgressItem.module.scss'
+import React, { FC, useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import s from './ProgressItem.module.css';
+// @ts-ignore
+import {Fade} from 'react-reveal';
 
-type ProgressType = {
-    id: number
-    title: string
-    value: number
+interface ProgressType {
+    title: string;
+    value: number;
 }
 
-export const ProgressItem: FC<ProgressType> = ({title, value}) => {
-    return (
-        <div className={s.wrapper}>
-            <div className={s.title}>{title}</div>
-            <div className={s.progressBlock}>
-                <progress className={s.progress} value={value} max={100}/>
-                <span>{value}%</span>
-            </div>
-        </div>
-    );
+export const ProgressItem: FC<ProgressType> = ({ title, value }) => {
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+    });
+    const [progress, setProgress] = useState(0);
+    const [showItem, setShowItem] = useState(false);
 
+    useEffect(() => {
+        if (inView) {
+            setShowItem(true);
+            let currentProgress = 0;
+            const increment = Math.ceil(value / 100); // Увеличение прогресса на каждом шаге
+            const interval = setInterval(() => {
+                currentProgress += increment;
+                setProgress(currentProgress);
+                if (currentProgress >= value) {
+                    clearInterval(interval); // Остановка анимации, когда достигнуто значение прогресса
+                }
+            }, 10); // Интервал обновления прогресса в миллисекундах
+
+            return () => clearInterval(interval);
+        }
+    }, [inView, value]);
+
+    return (
+        <Fade>
+            <div ref={ref} className={showItem ? s.wrapper : s.hidden}>
+                <div className={s.title}>{title}</div>
+                <div className={s.progressBlock}>
+                    <progress className={s.progress} value={progress} max={100} />
+                    <span>{progress}%</span>
+                </div>
+            </div>
+        </Fade>
+    );
 };
