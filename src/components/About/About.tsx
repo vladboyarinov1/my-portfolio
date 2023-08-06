@@ -18,7 +18,6 @@ export const About: FC<PropsType> = ({isDark}) => {
         const url = 'https://drive.google.com/file/d/10qbkQRrvRtyeuKRplHFtsGaCzDEGHaAF/view?usp=sharing';
         window.open(url, '_blank');
     }
-
     const navigate = useNavigate();
 
     useEffect(() => {
