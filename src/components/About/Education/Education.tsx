@@ -4,13 +4,13 @@ import Stack from '@mui/material/Stack';
 import Stepper from '@mui/material/Stepper';
 import StepLabel from '@mui/material/StepLabel';
 import SchoolIcon from '@mui/icons-material/School';
-import PsychologyIcon from '@mui/icons-material/Psychology';
 import StepConnector, {stepConnectorClasses} from '@mui/material/StepConnector';
 import {StepIconProps} from '@mui/material/StepIcon';
-import * as dgram from 'dgram';
+
 import {ReactComponent as ReactImg} from '../../../img/icons/react.svg'
-import {Step, StepContent, Typography} from '@mui/material';
-import {brown} from '@mui/material/colors';
+import {Step, Typography} from '@mui/material';
+// @ts-ignore
+import {Fade} from 'react-reveal';
 
 const ColorlibConnector = styled(StepConnector)(({theme}) => ({
     [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -104,29 +104,31 @@ const steps: StepType[] = [
 
 export function Education() {
     return (
-        <Stack sx={{width: '100%'}} spacing={4}>
-            <Stepper
-                activeStep={1}
-                connector={<ColorlibConnector/>}
-                orientation="vertical"
-            >
-                {steps.map((label) => (
-                    <Step key={label.label}>
-                        <StepLabel StepIconComponent={ColorlibStepIcon}>
+        <Fade right>
+            <Stack sx={{width: '100%'}} spacing={4}>
+                <Stepper
+                    activeStep={1}
+                    connector={<ColorlibConnector/>}
+                    orientation="vertical"
+                >
+                    {steps.map((label) => (
+                        <Step key={label.label}>
+                            <StepLabel StepIconComponent={ColorlibStepIcon}>
+                                <Typography style={{
+                                    fontFamily: ' \'Nunito\', sans-serif',
+                                    fontWeight: '600'
+                                }}>{label.label}</Typography>
+                            </StepLabel>
                             <Typography style={{
+                                position: 'absolute',
+                                marginLeft: '60px',
                                 fontFamily: ' \'Nunito\', sans-serif',
-                                fontWeight: '600'
-                            }}>{label.label}</Typography>
-                        </StepLabel>
-                        <Typography style={{
-                            position: 'absolute',
-                            marginLeft: '60px',
-                            fontFamily: ' \'Nunito\', sans-serif',
-                            // fontSize: '16px'
-                        }}>{label.description}</Typography>
-                    </Step>
-                ))}
-            </Stepper>
-        </Stack>
+                                // fontSize: '16px'
+                            }}>{label.description}</Typography>
+                        </Step>
+                    ))}
+                </Stepper>
+            </Stack>
+        </Fade>
     );
 }
