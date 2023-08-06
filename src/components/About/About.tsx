@@ -8,6 +8,8 @@ import {Experience} from './Experience/Experience';
 import {NavLink, Route, Routes, useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 import {Education} from './Education/Education';
+// @ts-ignore
+import {Fade} from 'react-reveal';
 
 type PropsType = {
     isDark: boolean
@@ -28,10 +30,12 @@ export const About: FC<PropsType> = ({isDark}) => {
         <Element name={'about'} id="about">
             <main className={s.main}>
                 <div className={styleContainer.container}>
-                    <div className={s.imgBlock}>
-                        <img src={photo} alt=""/>
-                    </div>
-                    <div className={s.bioBlock}>
+                    <Fade left>
+                        <div className={s.imgBlock}>
+                            <img src={photo} alt=""/>
+                        </div>
+                    </Fade>
+                    <Fade right><div className={s.bioBlock}>
                         <div className={s.textBlock}>
                             <h2>My Bio</h2>
                             <p>Hello and welcome to my portfolio website! My name is Vlad and I am a student at the
@@ -74,7 +78,7 @@ export const About: FC<PropsType> = ({isDark}) => {
                                 CV
                             </button>
                         </div>
-                    </div>
+                    </div></Fade>
                 </div>
             </main>
         </Element>

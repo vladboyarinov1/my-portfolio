@@ -11,6 +11,11 @@ import {LinkItem} from './LinkWrapper/LinkWrapper';
 import bg from '../../img/bg.jpg'
 import bg2 from '../../img/bgMob.jpg'
 import {SwitchTheme} from '../../common/components/SwitchTheme/SwitchTheme';
+import ReactTypingEffect from 'react-typing-effect';
+// @ts-ignore
+import {Fade} from 'react-reveal';
+// @ts-ignore
+// import Pulse from 'react-reveal/Pulse';
 
 
 type PropsType = {
@@ -64,15 +69,16 @@ export const Header: FC<PropsType> = ({setDarkMode, isDark}) => {
         <Element name={'/'} className={s.backgroundPhoto}
                  style={{backgroundImage: `url(${width && width > 640 ? bg : bg2})`}} id="home">
             <div className={`${s.headerContainer}`}>
-                {
-                    !widthForBurger ? <header className={fixedHeader ? s.fixed : s.header}
-                                              style={isDark ? {backgroundColor: '#212020'} : {backgroundColor: 'white'}}>
+                {!widthForBurger ?
+                    <header className={fixedHeader ? s.fixed : s.header}
+                            style={isDark ? {backgroundColor: '#212020'} : {backgroundColor: 'white'}}>
                         <nav>
                             {linkItem}
                             {fixedHeader ? <SwitchTheme setDarkMode={setDarkMode} isDark={isDark}/> : ''}
                         </nav>
 
-                    </header> : <header  className={s.burgerHeader}>
+                    </header>
+                    : <header className={s.burgerHeader}>
                         <div className={headerClassName}>
                             {fixedHeader ? <SwitchTheme setDarkMode={setDarkMode} isDark={isDark}/> : ''}
                             <img
@@ -85,14 +91,17 @@ export const Header: FC<PropsType> = ({setDarkMode, isDark}) => {
                         </div>
                     </header>
                 }
-                <div className={s.welcomeContainer}>
-                    <div className={s.welcomeBlock} style={movingTextStyle}>
-                        <h1>I'm Vladislav Boiarinov<br/>
-                            A Front-end Developer
-                        </h1>
-                        <p>Link to my <a href="https://github.com/vladboyarinov1" target="_blank">GitHub</a> account</p>
+                <Fade left>
+                    <div className={s.welcomeContainer}>
+                        <div className={s.welcomeBlock} style={movingTextStyle}>
+                            <h1>I'm Vladislav Boiarinov<br/>
+                                A Front-end Developer
+                            </h1>
+                            <p>Link to my <a href="https://github.com/vladboyarinov1" target="_blank">GitHub</a> account
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </Fade>
             </div>
         </Element>
     );

@@ -5,6 +5,8 @@ import {ProjectItem} from './ProjectItem/ProjectItem';
 import {Element} from 'react-scroll';
 import todolistImg from '../../img/todolist.jpg'
 import socialImg from '../../img/network.jpg'
+// @ts-ignore
+import {Slide} from 'react-reveal';
 
 type PropsType = {
     isDark: boolean
@@ -12,11 +14,23 @@ type PropsType = {
 
 const projectsItems = [
     {
-        id: 1, title: 'Todo-list (in development)', description: 'React,Redux,Storybook',
+        id: 1, title: 'Todo-list', description: 'React,Redux,Storybook',
         projectImg: todolistImg, link: 'https://github.com/vladboyarinov1/todolist'
     },
-    {id: 2, title: 'Social Network (in development)', description: 'React,Redux,Storybook', projectImg: socialImg, link: 'https://github.com/vladboyarinov1'},
-    {id: 3, title: `Clone Instagram (in development)`, description: 'React,Redux,Storybook', projectImg: todolistImg, link: 'https://github.com/vladboyarinov1'},
+    {
+        id: 2,
+        title: 'Social Network',
+        description: 'React,Redux,Storybook',
+        projectImg: socialImg,
+        link: 'https://github.com/vladboyarinov1'
+    },
+    {
+        id: 3,
+        title: `Clone Instagram`,
+        description: 'React,Redux,Storybook',
+        projectImg: todolistImg,
+        link: 'https://github.com/vladboyarinov1'
+    },
 
 ]
 
@@ -29,12 +43,15 @@ export const Projects: FC<PropsType> = ({isDark}) => {
     return (
         <Element name={'projects'} className={isDark ? `${s.projectBlock} ${s.prBlockDark}` : `${s.projectBlock}`}
                  id="projects">
-            <div className={`${styleContainer.container} ${s.projectContainer}`}>
-                <h2 className={s.title}>My project</h2>
-                <div className={s.projects}>
-                    {projects}
+            <Slide bottom>
+                <div className={`${styleContainer.container} ${s.projectContainer}`}>
+                    <h2 className={s.title}>My project</h2>
+
+                    <div className={s.projects}>
+                        {projects}
+                    </div>
                 </div>
-            </div>
+            </Slide>
         </Element>
     );
 };
