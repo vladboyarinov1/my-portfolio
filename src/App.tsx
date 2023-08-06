@@ -48,7 +48,7 @@ function App() {
             <Header setDarkMode={setDarkMode} isDark={isDark}/>
             <About isDark={isDark}/>
             <Projects isDark={isDark}/>
-            <Contacts/>
+            <Contacts isDark={isDark}/>
             <Footer isDark={isDark}/>
         </ThemeProvider>
     );

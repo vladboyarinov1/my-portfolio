@@ -15,6 +15,7 @@ type PropsType = {
     isDark: boolean
 }
 
+
 export const About: FC<PropsType> = ({isDark}) => {
     const downloadCV = () => {
         const url = 'https://drive.google.com/file/d/10qbkQRrvRtyeuKRplHFtsGaCzDEGHaAF/view?usp=sharing';

@@ -1,19 +1,24 @@
-import React from 'react';
+import React, {FC} from 'react';
 import s from './Contacts.module.scss'
 import styleContainer from '../../common/styles/Container.module.css'
 import {Element} from 'react-scroll';
 import {SendForm} from './SendForm/SendForm';
 // @ts-ignore
 import {Fade} from 'react-reveal';
+import {boolean} from 'yup';
 
-export const Contacts = () => {
+
+type PropsType = {
+    isDark: boolean
+}
+export const Contacts: FC<PropsType> = ({isDark}) => {
     return (
         <Element name={'contacts'} className={s.contactsBlock} id={'contacts'}>
             <Fade bottom><h3 className={s.title}>Contact Me</h3></Fade>
 
             <div className={`${styleContainer.container} ${s.contactsContainer}`}>
                 <div className={s.formAndContacts}>
-                    <Fade left><SendForm/></Fade>
+                    <Fade left><SendForm isDark={isDark}/></Fade>
                    <Fade right>
                        <div className={s.contactsInfoBlock}>
                            <h3 className={s.contactsTitle}>Contacts Info</h3>

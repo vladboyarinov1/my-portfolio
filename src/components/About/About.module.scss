@@ -6,7 +6,10 @@
 }
 
 .imgBlock {
-  padding-right: 10px;
+  //padding-right: 10px;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+
 
   & img {
     width: 600px;
@@ -15,7 +18,8 @@
     background-repeat: no-repeat;
     object-fit: cover;
     object-position: 50% 50%;
-    vertical-align: bottom
+    vertical-align: bottom;
+    border-radius: 4px;
   }
 }
 

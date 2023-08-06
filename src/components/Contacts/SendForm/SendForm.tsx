@@ -1,10 +1,14 @@
 import s from '../Contacts.module.scss';
-import React, {useEffect, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import emailjs from 'emailjs-com';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
-import {bool} from 'yup';
 import {CircularProgress} from '@mui/material';
+import {boolean} from 'yup';
+
+type PropsType = {
+    isDark: boolean
+}
 
 const validationSchema = Yup.object({
     firstName: Yup.string().required('Obrequired'),
@@ -12,7 +16,7 @@ const validationSchema = Yup.object({
     message: Yup.string().required('Required')
 });
 
-export const SendForm = () => {
+export const SendForm: FC<PropsType> = ({isDark}) => {
 
     const [loading, setLoading] = useState<boolean>(false)
 
@@ -54,27 +58,27 @@ export const SendForm = () => {
             <form className={loading ? s.formIsSending : s.form} onSubmit={formik.handleSubmit}>
                 <div className={s.nameFormBlock}>
                     <div>
-                        <div className={s.firstName}>
+                        <div className={s.firstName} >
                             <label className="" htmlFor="firstName">First name</label>
-                            <input id="firstName" type="text"
+                            <input style={{color: isDark ? 'white' : 'black'}} id="firstName" type="text"
                                    className="form-control" {...formik.getFieldProps('firstName')}/>
                         </div>
                     </div>
                     <div>
                         <div>
                             <label htmlFor="lastName" className="">Last name</label>
-                            <input id="lastName" type="text"
+                            <input style={{color: isDark ? 'white' : 'black'}} id="lastName" type="text"
                                    className="form-control" {...formik.getFieldProps('lastName')}/>
                         </div>
                     </div>
                 </div>
                 <div className={s.emailFormBlock}>
                     <label className="" htmlFor="email">Email address</label>
-                    <input id="email" type="email" {...formik.getFieldProps('email')}/>
+                    <input style={{color: isDark ? 'white' : 'black'}} id="email" type="email" {...formik.getFieldProps('email')}/>
                 </div>
                 <div className={s.messageFormBlock}>
                     <label htmlFor="message" className="">Message</label>
-                    <textarea className={s.messageInput} id="message" cols={30}
+                    <textarea style={{color: isDark ? 'white' : 'black'}} className={s.messageInput} id="message" cols={30}
                               rows={5} {...formik.getFieldProps('message')}></textarea>
                 </div>
                 <button type="submit" className={s.button}>Send Message</button>
