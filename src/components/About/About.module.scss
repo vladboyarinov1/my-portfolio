@@ -66,6 +66,7 @@
   cursor: pointer;
   font-family: 'Nunito', sans-serif;
 }
+
 .menu {
   display: flex;
   color: #96bb7c;
@@ -78,10 +79,27 @@
   margin-right: 5px;
 }
 
+.hire:hover {
+  background: linear-gradient(95deg, #96bb7c, rgb(106, 143, 81));
+}
+.hire:active {
+  background: linear-gradient(95deg, #96bb7c, rgba(106, 143, 81, 0.7));
+}
+
+
 .download {
   background-color: #6c757d;
   border-color: #6c757d;
 }
+
+.download:hover {
+  background: linear-gradient(95deg, #6c757d, rgba(211, 211, 211, 0.7));
+}
+
+.download:active {
+  background: linear-gradient(95deg, #6c757d, rgb(211, 211, 211));
+}
+
 
 @media screen and (max-width: 1200px) {
   .imgBlock img {

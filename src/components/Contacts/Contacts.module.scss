@@ -129,6 +129,12 @@ textarea {
   cursor: pointer;
   font-family: 'Nunito', sans-serif;
 }
+.button:hover {
+  background: linear-gradient(95deg, #96bb7c, rgb(106, 143, 81));
+}
+.button:active {
+  background: linear-gradient(95deg, #96bb7c, rgba(106, 143, 81, 0.7));
+}
 
 .contactsInfoBlock {
   padding-right: 180px;
