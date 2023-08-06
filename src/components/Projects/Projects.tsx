@@ -43,15 +43,15 @@ export const Projects: FC<PropsType> = ({isDark}) => {
     return (
         <Element name={'projects'} className={isDark ? `${s.projectBlock} ${s.prBlockDark}` : `${s.projectBlock}`}
                  id="projects">
-            <Slide bottom>
-                <div className={`${styleContainer.container} ${s.projectContainer}`}>
-                    <h2 className={s.title}>My project</h2>
-
-                    <div className={s.projects}>
-                        {projects}
-                    </div>
+            {/*<Slide bottom>*/}
+            <div className={`${styleContainer.container} ${s.projectContainer}`}>
+                <Slide left><h2 className={s.title}>My project</h2></Slide>
+                <div className={s.projects}>
+                    {projects}
                 </div>
-            </Slide>
+
+            </div>
+            {/*</Slide>*/}
         </Element>
     );
 };

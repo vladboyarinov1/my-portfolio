@@ -1,6 +1,9 @@
 import React, {FC, useState} from 'react';
 import s from './ProjectItem.module.css';
 import styled from 'styled-components';
+// @ts-ignore
+import {Slide} from 'react-reveal';
+import {useWindowSize} from '../../../hooks/useWindowSize';
 
 type PropsType = {
     id: number;
@@ -20,7 +23,8 @@ export const ProjectItem: FC<PropsType> = ({
                                                isDark
                                            }) => {
     const [isHovered, setIsHovered] = useState(false);
-
+    const {width} = useWindowSize();
+    console.log(width)
     const handleMouseEnter = () => {
         setIsHovered(true);
     };
@@ -28,24 +32,27 @@ export const ProjectItem: FC<PropsType> = ({
     const handleMouseLeave = () => {
         setIsHovered(false);
     };
+    const isWidth = width && width < 768 ? 'left' : 'bottom'
 
     return (
-        <div className={s.project} style={isDark ? {
-            boxShadow: '6px 6px 6px rgba(255, 255, 255, 0.4)'
-        } : {boxShadow: '6px 6px 6px rgba(0, 0, 0, 0.2'}}>
-            <ImgContainer href={link} target="_blank"
-                          imgUrl={projectImg}
-                          className={s.imgContainer}
-                          isHovered={isHovered}
-                          onMouseEnter={handleMouseEnter}
-                          onMouseLeave={handleMouseLeave}
-            >
-            </ImgContainer>
-            <div className={s.text}>
-                <h2 className={s.title}>{title}</h2>
-                <span className={s.description}>{description}</span>
+        <Slide left={isWidth === 'left'} bottom={isWidth === 'bottom'}>
+            <div className={s.project} style={isDark ? {
+                boxShadow: '6px 6px 6px rgba(255, 255, 255, 0.4)'
+            } : {boxShadow: '6px 6px 6px rgba(0, 0, 0, 0.2'}}>
+                <ImgContainer href={link} target="_blank"
+                              imgUrl={projectImg}
+                              className={s.imgContainer}
+                              isHovered={isHovered}
+                              onMouseEnter={handleMouseEnter}
+                              onMouseLeave={handleMouseLeave}
+                >
+                </ImgContainer>
+                <div className={s.text}>
+                    <h2 className={s.title}>{title}</h2>
+                    <span className={s.description}>{description}</span>
+                </div>
             </div>
-        </div>
+        </Slide>
     );
 };
 

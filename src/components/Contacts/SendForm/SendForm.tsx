@@ -4,7 +4,12 @@ import emailjs from 'emailjs-com';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {CircularProgress} from '@mui/material';
-import {boolean} from 'yup';
+import MuiAlert, {AlertProps} from '@mui/material/Alert';
+
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+    props, ref) {
+    return <MuiAlert elevation={20} ref={ref} variant="filled" {...props} />
+})
 
 type PropsType = {
     isDark: boolean
@@ -58,7 +63,7 @@ export const SendForm: FC<PropsType> = ({isDark}) => {
             <form className={loading ? s.formIsSending : s.form} onSubmit={formik.handleSubmit}>
                 <div className={s.nameFormBlock}>
                     <div>
-                        <div className={s.firstName} >
+                        <div className={s.firstName}>
                             <label className="" htmlFor="firstName">First name</label>
                             <input style={{color: isDark ? 'white' : 'black'}} id="firstName" type="text"
                                    className="form-control" {...formik.getFieldProps('firstName')}/>
@@ -74,11 +79,13 @@ export const SendForm: FC<PropsType> = ({isDark}) => {
                 </div>
                 <div className={s.emailFormBlock}>
                     <label className="" htmlFor="email">Email address</label>
-                    <input style={{color: isDark ? 'white' : 'black'}} id="email" type="email" {...formik.getFieldProps('email')}/>
+                    <input style={{color: isDark ? 'white' : 'black'}} id="email"
+                           type="email" {...formik.getFieldProps('email')}/>
                 </div>
                 <div className={s.messageFormBlock}>
                     <label htmlFor="message" className="">Message</label>
-                    <textarea style={{color: isDark ? 'white' : 'black'}} className={s.messageInput} id="message" cols={30}
+                    <textarea style={{color: isDark ? 'white' : 'black'}} className={s.messageInput} id="message"
+                              cols={30}
                               rows={5} {...formik.getFieldProps('message')}></textarea>
                 </div>
                 <button type="submit" className={s.button}>Send Message</button>
@@ -88,3 +95,8 @@ export const SendForm: FC<PropsType> = ({isDark}) => {
         </div>
     );
 }
+
+
+
+
+
