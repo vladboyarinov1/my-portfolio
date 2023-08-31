@@ -18,9 +18,11 @@ type PropsType = {
 export const Footer: FC<PropsType> = ({isDark}) => {
     return (
         <footer className={isDark ? `${s.footerBlock}  ${s.footerDark}` : s.footerBlock}>
-            <div className={`${styleContainer.container} ${s.footerContainer}`}>
-                <Slide left><p>Vladislav Boiarinov</p></Slide>
-                <HeadShake>
+            <HeadShake>
+                <div className={`${styleContainer.container} ${s.footerContainer}`}>
+                    <p>Vladislav Boiarinov</p>
+                    {/*<Slide left><p>Vladislav Boiarinov</p></Slide>*/}
+                    {/*<HeadShake>*/}
                     <div className={s.socialIcons}>
                         <a href="https://t.me/boyarinov_1" target="_blank">
                             <img src={telegram} alt="telegram"/>
@@ -38,9 +40,12 @@ export const Footer: FC<PropsType> = ({isDark}) => {
                             <img src={vk} alt="VK"/>
                         </a>
                     </div>
-                </HeadShake>
-                <Slide right><p className={s.copyright}>© 2023 All rights reserved</p></Slide>
-            </div>
+                    {/*</HeadShake>*/}
+                    <p className={s.copyright}>© 2023 All rights reserved</p>
+                    {/*<Slide right><p className={s.copyright}>© 2023 All rights reserved</p></Slide>*/}
+                </div>
+            </HeadShake>
+
         </footer>
     );
 };
