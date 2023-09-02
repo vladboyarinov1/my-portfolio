@@ -5,14 +5,9 @@ import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {CircularProgress} from '@mui/material';
 import MuiAlert, {AlertProps} from '@mui/material/Alert';
-import {ErrorSnackbar} from '../../ErrorSnackbar/ErrorSnackbar';
+import {SuccessfulSnackbar} from '../../SuccessfulSnackbar/SuccessfulSnackbar';
 // @ts-ignore
 import {Fade} from 'react-reveal';
-
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
-    props, ref) {
-    return <MuiAlert elevation={20} ref={ref} variant="filled" {...props} />
-})
 
 type PropsType = {
     isDark: boolean
@@ -51,17 +46,9 @@ export const SendForm: FC<PropsType> = ({isDark}) => {
             });
     }
 
-    // useEffect(() => {
-    //     const timeout = setTimeout(() => {
-    //         formik.setStatus({sent: false});
-    //     }, 3000);
-
-    //     return () => clearTimeout(timeout);
-    // }, [formik.status?.sent]);
-
     return (
         <div>
-            <ErrorSnackbar isOpen={formik.status?.sent} setStatus={formik.setStatus}/>
+            <SuccessfulSnackbar isOpen={formik.status?.sent} setStatus={formik.setStatus}/>
             <Fade left>
                 <form className={loading ? s.formIsSending : s.form} onSubmit={formik.handleSubmit}>
                     <div className={s.nameFormBlock}>
