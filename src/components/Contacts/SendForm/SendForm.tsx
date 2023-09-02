@@ -5,6 +5,9 @@ import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {CircularProgress} from '@mui/material';
 import MuiAlert, {AlertProps} from '@mui/material/Alert';
+import {ErrorSnackbar} from '../../ErrorSnackbar/ErrorSnackbar';
+// @ts-ignore
+import {Fade} from 'react-reveal';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props, ref) {
@@ -48,50 +51,52 @@ export const SendForm: FC<PropsType> = ({isDark}) => {
             });
     }
 
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            formik.setStatus({sent: false});
-        }, 3000);
+    // useEffect(() => {
+    //     const timeout = setTimeout(() => {
+    //         formik.setStatus({sent: false});
+    //     }, 3000);
 
-        return () => clearTimeout(timeout);
-    }, [formik.status?.sent]);
+    //     return () => clearTimeout(timeout);
+    // }, [formik.status?.sent]);
 
     return (
         <div>
-            {formik.status?.sent &&
-                <p className={s.successMessage}>Форма отправлена!</p>}
-            <form className={loading ? s.formIsSending : s.form} onSubmit={formik.handleSubmit}>
-                <div className={s.nameFormBlock}>
-                    <div>
-                        <div className={s.firstName}>
-                            <label className="" htmlFor="firstName">First name</label>
-                            <input style={{color: isDark ? 'white' : 'black'}} id="firstName" type="text"
-                                   className="form-control" {...formik.getFieldProps('firstName')}/>
-                        </div>
-                    </div>
-                    <div>
+            <ErrorSnackbar isOpen={formik.status?.sent} setStatus={formik.setStatus}/>
+            <Fade left>
+                <form className={loading ? s.formIsSending : s.form} onSubmit={formik.handleSubmit}>
+                    <div className={s.nameFormBlock}>
                         <div>
-                            <label htmlFor="lastName" className="">Last name</label>
-                            <input style={{color: isDark ? 'white' : 'black'}} id="lastName" type="text"
-                                   className="form-control" {...formik.getFieldProps('lastName')}/>
+                            <div className={s.firstName}>
+                                <label className="" htmlFor="firstName">First name</label>
+                                <input style={{color: isDark ? 'white' : 'black'}} id="firstName" type="text"
+                                       className="form-control" {...formik.getFieldProps('firstName')}/>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label htmlFor="lastName" className="">Last name</label>
+                                <input style={{color: isDark ? 'white' : 'black'}} id="lastName" type="text"
+                                       className="form-control" {...formik.getFieldProps('lastName')}/>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className={s.emailFormBlock}>
-                    <label className="" htmlFor="email">Email address</label>
-                    <input style={{color: isDark ? 'white' : 'black'}} id="email"
-                           type="email" {...formik.getFieldProps('email')}/>
-                </div>
-                <div className={s.messageFormBlock}>
-                    <label htmlFor="message" className="">Message</label>
-                    <textarea style={{color: isDark ? 'white' : 'black'}} className={s.messageInput} id="message"
-                              cols={30}
-                              rows={5} {...formik.getFieldProps('message')}></textarea>
-                </div>
-                <button type="submit" className={s.button}>Send Message</button>
-                {loading ? <CircularProgress color="success" className={s.progress}/> : ''}
-                {loading && <div className={s.overlay}/>}
-            </form>
+                    <div className={s.emailFormBlock}>
+                        <label className="" htmlFor="email">Email address</label>
+                        <input style={{color: isDark ? 'white' : 'black'}} id="email"
+                               type="email" {...formik.getFieldProps('email')}/>
+                    </div>
+                    <div className={s.messageFormBlock}>
+                        <label htmlFor="message" className="">Message</label>
+                        <textarea style={{color: isDark ? 'white' : 'black'}} className={s.messageInput} id="message"
+                                  cols={30}
+                                  rows={5} {...formik.getFieldProps('message')}></textarea>
+                    </div>
+                    <button type="submit" className={s.button}>Send Message</button>
+                    {loading ? <CircularProgress color="success" className={s.progress}/> : ''}
+                    {loading && <div className={s.overlay}/>}
+                </form>
+            </Fade>
+
         </div>
     );
 }

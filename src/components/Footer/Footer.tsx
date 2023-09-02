@@ -45,7 +45,6 @@ export const Footer: FC<PropsType> = ({isDark}) => {
                     {/*<Slide right><p className={s.copyright}>© 2023 All rights reserved</p></Slide>*/}
                 </div>
             </HeadShake>
-
         </footer>
     );
 };

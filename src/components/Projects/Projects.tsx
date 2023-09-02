@@ -7,6 +7,7 @@ import todolistImg from '../../img/todolist.jpg'
 import socialImg from '../../img/network.jpg'
 // @ts-ignore
 import {Slide} from 'react-reveal';
+import {ErrorSnackbar} from '../ErrorSnackbar/ErrorSnackbar';
 
 type PropsType = {
     isDark: boolean
