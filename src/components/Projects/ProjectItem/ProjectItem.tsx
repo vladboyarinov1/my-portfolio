@@ -24,7 +24,7 @@ export const ProjectItem: FC<PropsType> = ({
                                            }) => {
     const [isHovered, setIsHovered] = useState(false);
     const {width} = useWindowSize();
-    console.log(width)
+
     const handleMouseEnter = () => {
         setIsHovered(true);
     };
